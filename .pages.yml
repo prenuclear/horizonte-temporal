@@ -1,15 +1,106 @@
-
 media:
-  input: imagenes
-  output: /imagenes
-
+  input: images
+  output: /images
 content:
-  - name: contenido
-    label: Contenido del sitio
+  - name: sitio
+    label: Contenidos de Horizonte Temporal
     type: file
     path: contenido.json
+    format: json
     fields:
-      - name: titulo
-        label: Título
-        type: string
-        required: false
+      - name: presentacion
+        label: Frase de portada
+        type: text
+      - name: historia_1
+        label: Historia - párrafo 1
+        type: text
+      - name: historia_2
+        label: Historia - párrafo 2
+        type: text
+      - name: proceso_1
+        label: Proceso creativo
+        type: text
+      - name: capitulos
+        label: Siete capítulos
+        type: object
+        list: true
+        fields:
+          - name: titulo
+            label: Título
+            type: string
+          - name: imagen
+            label: Nombre de imagen (archivo en images)
+            type: string
+          - name: texto
+            label: Sinopsis
+            type: text
+      - name: galeria
+        label: Galería
+        type: object
+        list: true
+        fields:
+          - name: imagen
+            label: Nombre de imagen
+            type: string
+          - name: titulo
+            label: Descripción
+            type: string
+          - name: categoria
+            label: Categoría (cosmos, tierra, criaturas)
+            type: string
+      - name: noticias
+        label: Noticias y novedades
+        type: object
+        list: true
+        fields:
+          - name: fecha
+            label: Fecha (AAAA-MM-DD)
+            type: string
+          - name: titulo
+            label: Título
+            type: string
+          - name: texto
+            label: Texto de la noticia
+            type: text
+          - name: imagen
+            label: Nombre de imagen
+            type: string
+          - name: enlace
+            label: URL opcional
+            type: string
+          - name: texto_enlace
+            label: Texto del enlace
+            type: string
+          - name: publicar
+            label: Publicar noticia
+            type: boolean
+      - name: compra
+        label: Dónde comprar
+        type: object
+        fields:
+          - name: titulo
+            label: Título
+            type: string
+          - name: descripcion
+            label: Descripción
+            type: text
+          - name: precio
+            label: Precio
+            type: string
+          - name: estado
+            label: Estado (próximamente, disponible...)
+            type: string
+          - name: imagen
+            label: Nombre de imagen
+            type: string
+          - name: enlaces
+            label: Tiendas y puntos de venta
+            type: object
+            list: true
+            fields:
+              - name: nombre
+                label: Nombre de la tienda
+                type: string
+              - name: url
+                label: Enlace de compra
+                type: string
