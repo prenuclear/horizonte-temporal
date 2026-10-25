@@ -1,0 +1,15 @@
+
+media:
+  input: imagenes
+  output: /imagenes
+
+content:
+  - name: contenido
+    label: Contenido del sitio
+    type: file
+    path: contenido.json
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+        required: false
