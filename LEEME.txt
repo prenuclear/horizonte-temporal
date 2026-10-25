@@ -1,0 +1,20 @@
+HORIZONTE TEMPORAL — MAQUETA WEB INTEGRAL v01
+
+1. Descomprime el ZIP completo.
+2. Entra a la carpeta Horizonte_Temporal_web.
+3. Abre index.html con Chrome, Firefox, Edge o Safari.
+4. No se requiere internet para ver las 13 ilustraciones ni para navegar por el sitio. La tipografía especial usa Google Fonts; sin conexión se verá una fuente alternativa.
+
+CONTENIDO
+- index.html: estructura de la web, secciones y textos introductorios.
+- styles.css: colores, composición, tamaños y estilos responsivos.
+- script.js: títulos y textos de los siete capítulos, categorías y títulos de la galería, menú y ampliación de imágenes.
+- images/: 13 ilustraciones originales en JPG, sin modificación.
+
+SECCIONES
+Portada / La historia / Siete capítulos / Atlas del universo / Galería con filtros / Proceso creativo / Cierre.
+
+IMPORTANTE
+Los títulos y textos de capítulos son PROPUESTAS PROVISIONALES, no el guion definitivo.
+Las imágenes están dentro de la carpeta images; no borres ni cambies sus nombres sin actualizar las referencias en el código.
+Para publicar la web se puede subir la carpeta completa a un alojamiento estático.
