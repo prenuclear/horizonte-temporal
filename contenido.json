@@ -1,5 +1,5 @@
 {
-  "presentacion": "Cuando las estrellas dejan de nacer, la materia comienza a recordar otras formas de vida.",
+  "presentacion": "La materia recuerda todas sus otras formas de vida.",
   "historia_1": "Las galaxias se han vuelto silenciosas. Nadie recuerda cuándo nació la última estrella. En la Tierra, las señales de una transformación imposible comienzan a alterar la vida y la memoria.",
   "historia_2": "Un viajero deberá encontrar al Príncipe Robot y descubrir por qué sus registros no coinciden. Su búsqueda lo conducirá a ciudades en ruinas, mundos extraños y al umbral de una existencia que espera ocupar el lugar de la vida.",
   "proceso_1": "El universo visual de Horizonte Temporal se construye a partir de ilustraciones, figuras modeladas, escenografías y procesos de composición digital. Cada imagen puede ser revisitada, intervenida y transformada.",
@@ -113,17 +113,13 @@
       "titulo": "Horizonte Temporal: un universo en construcción",
       "texto": "Comienza el archivo web de la novela gráfica. Pronto compartiremos nuevas imágenes y avances del proceso creativo.",
       "imagen": "1000057951.jpg",
-      "enlace": "",
-      "texto_enlace": "",
       "publicar": true
     }
   ],
   "compra": {
     "titulo": "Horizonte Temporal",
     "descripcion": "La edición impresa está en preparación. Aquí anunciaremos el lanzamiento y los lugares donde conseguirla.",
-    "precio": "",
     "estado": "PRÓXIMAMENTE",
-    "imagen": "1000057951.jpg",
-    "enlaces": []
+    "imagen": "1000057951.jpg"
   }
 }
