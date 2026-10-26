@@ -8,6 +8,38 @@ content:
     path: contenido.json
     format: json
     fields:
+      - name: video_portada
+        label: URL o ruta del video MP4 de portada
+        type: string
+      - name: video_poster
+        label: Imagen de respaldo del video
+        type: string
+      - name: galeria_ayuda
+        label: Texto de ayuda de la galería
+        type: text
+      - name: proceso_descripcion
+        label: Proceso - descripción
+        type: text
+      - name: proceso_cierre
+        label: Proceso - cierre
+        type: text
+      - name: contacto_texto
+        label: Contacto - presentación
+        type: text
+      - name: contacto_email
+        label: Correo de contacto
+        type: string
+      - name: redes_sociales
+        label: Redes sociales
+        type: object
+        list: true
+        fields:
+          - name: nombre
+            label: Red social
+            type: string
+          - name: url
+            label: URL
+            type: string
       - name: presentacion
         label: Frase de portada
         type: text
@@ -53,6 +85,9 @@ content:
         type: object
         list: true
         fields:
+          - name: id
+            label: Identificador único (sin espacios)
+            type: string
           - name: fecha
             label: Fecha (AAAA-MM-DD)
             type: string
@@ -65,6 +100,12 @@ content:
           - name: imagen
             label: Nombre de imagen
             type: string
+          - name: contenido
+            label: Noticia completa
+            type: text
+          - name: relacionado
+            label: Información relacionada desplegable
+            type: text
           - name: enlace
             label: URL opcional
             type: string

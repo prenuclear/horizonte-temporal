@@ -30,12 +30,12 @@ async function cargarContenido(){
    const body=document.createElement('div');body.className='news-body';
    const date=document.createElement('span');date.className='kicker';date.textContent=n.fecha||'NOVEDADES';body.append(date);
    const title=document.createElement('h3');title.textContent=n.titulo||'';body.append(title);
-   const description=document.createElement('p');description.textContent=n.texto||'';body.append(description);
+   const description=document.createElement('p');description.textContent=n.texto||'';body.append(description);const read=document.createElement('a');read.href='noticia.html?id='+encodeURIComponent(n.id||n.fecha||'');read.textContent='LEER NOTICIA COMPLETA ↗';body.append(read);
    if(n.enlace&&/^https?:\/\//i.test(n.enlace)){const a=document.createElement('a');a.href=n.enlace;a.textContent=n.texto_enlace||'VER MÁS ↗';a.target='_blank';a.rel='noopener noreferrer';body.append(a)}
    item.append(body);news.append(item)
   });
   if(!news.children.length){const msg=document.createElement('p');msg.className='section-sub';msg.textContent='Pronto compartiremos nuevas noticias del proyecto.';news.append(msg)}
-  const buy=data.compra||{};
+  const hero=document.querySelector('#heroVideo');if(data.video_portada){hero.src=data.video_portada;hero.style.display='block';hero.load()}else{hero.style.display='none'};if(data.video_poster)hero.poster='images/'+data.video_poster.replace(/^\/?images\//,'');const email=document.querySelector('#contactEmail');if(data.contacto_email){email.href='mailto:'+encodeURIComponent(data.contacto_email);email.style.display='inline-flex'}else{email.style.display='none'}const socials=document.querySelector('#socialLinks');socials.replaceChildren();(data.redes_sociales||[]).forEach(s=>{if(!/^https:\/\//i.test(s.url||''))return;const a=document.createElement('a');a.className='outline-btn';a.href=s.url;a.textContent=s.nombre||'RED SOCIAL';a.target='_blank';a.rel='noopener noreferrer';socials.append(a)});const buy=data.compra||{};
   if(buy.titulo)document.querySelector('#buyTitle').textContent=buy.titulo;
   if(buy.descripcion)document.querySelector('#buyDescription').textContent=buy.descripcion;
   document.querySelector('#buyPrice').textContent=buy.precio||'';
