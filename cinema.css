@@ -1,0 +1,46 @@
+/* Horizonte Temporal — recorrido cinematográfico de capítulos.
+   Extensión autónoma: no modifica la edición desde Pages CMS. */
+.chapter-explorer[hidden]{display:none!important}
+.chapters.cinema-ready .chapter-grid{display:none}
+.cinema-explorer{margin-top:34px;min-width:0}
+.cinema-stage{isolation:isolate;position:relative;display:flex;flex-direction:column;min-height:690px;padding:36px clamp(24px,4.5vw,74px) 30px;overflow:hidden;background:#15161b;border:1px solid #ffffff27;box-shadow:0 20px 75px #0005}
+.cinema-visual,.cinema-visual::after{position:absolute;inset:0;pointer-events:none}
+.cinema-visual{z-index:-2;background:#1d1a1c}
+.cinema-visual img{width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.79) saturate(.84);transform:scale(1.015)}
+.cinema-visual::after{content:"";background:linear-gradient(90deg,#08090ef2 0%,#08090ed6 34%,#090a0d7a 59%,#090a0d10 100%),linear-gradient(0deg,#08090de0 0%,transparent 47%),linear-gradient(180deg,#08090da8 0%,transparent 30%)}
+.cinema-meta,.cinema-footer{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.cinema-signature,.cinema-count,.cinema-eyebrow,.cinema-hint,.cinema-step-number,.cinema-step-label,.cinema-progress-label{font-size:10px;line-height:1.5;letter-spacing:.16em;text-transform:uppercase}
+.cinema-signature{color:#c7bdb3}.cinema-count{color:#e6dfd7;font-variant-numeric:tabular-nums}
+.cinema-content{position:relative;z-index:1;max-width:660px;width:min(65%,660px);margin:auto 0 62px;padding-top:95px}
+.cinema-eyebrow{color:var(--accent);font-weight:700;margin-bottom:18px}
+.cinema-content h3{font-size:clamp(34px,4.35vw,69px);font-weight:500;line-height:1.02;letter-spacing:-.055em;text-wrap:balance;margin:0 0 25px;overflow-wrap:break-word}
+.cinema-synopsis{font-size:clamp(14px,1.27vw,17px);line-height:1.7;max-width:560px;color:#e3ddda;margin:0;text-wrap:pretty}
+.cinema-footer{margin-top:12px}
+.cinema-controls{display:flex;gap:10px}
+.cinema-arrow{min-width:150px;min-height:47px;display:inline-flex;justify-content:center;align-items:center;gap:12px;background:#111216ae;border:1px solid #ded7d084;color:#f3eee7;padding:12px 18px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;transition:background .2s,border-color .2s}
+.cinema-arrow:hover:not(:disabled),.cinema-arrow:focus-visible{background:#e78460;color:#0b0b0d;border-color:#e78460}
+.cinema-arrow:disabled{opacity:.36;cursor:not-allowed}
+.cinema-hint{color:#c2b6af;text-align:right}
+.cinema-timeline{display:flex;gap:9px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;padding:16px 0 13px;scrollbar-width:thin;scrollbar-color:#a66552 #262429}
+.cinema-step{position:relative;display:flex;align-items:center;gap:12px;flex:0 0 194px;min-height:90px;padding:10px;text-align:left;color:#c6c4c3;background:#17181c;border:1px solid #39373a;scroll-snap-align:start;transition:background .2s,border-color .2s,opacity .2s}
+.cinema-step img{width:58px;height:67px;object-fit:cover;filter:brightness(.65);flex-shrink:0}
+.cinema-step-text{display:flex;flex-direction:column;gap:5px;min-width:0}
+.cinema-step-number{color:#bbaaa3;font-variant-numeric:tabular-nums}
+.cinema-step-label{font-size:11px;letter-spacing:.025em;text-transform:none;line-height:1.25;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.cinema-step[aria-current="step"]{border-color:var(--accent);background:#2d211f;color:#fff}
+.cinema-step[aria-current="step"] .cinema-step-number{color:var(--accent)}
+.cinema-step[aria-current="step"] img{filter:brightness(1)}
+.cinema-step:hover{border-color:#d1aa98}
+.cinema-step:focus-visible,.cinema-arrow:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.cinema-progress{height:2px;background:#40363a;position:relative;margin-top:2px}
+.cinema-progress-fill{height:100%;width:0%;background:var(--accent);transition:width .5s ease}
+.cinema-progress-label{display:flex;justify-content:space-between;color:#988b88;margin-top:12px}
+.cinema-stage.is-changing .cinema-visual img{animation:cinema-focus 850ms cubic-bezier(.2,.75,.1,1) both}
+.cinema-stage.is-changing .cinema-content>*{animation:cinema-word-in 540ms cubic-bezier(.2,.7,.2,1) both}
+.cinema-stage.is-changing .cinema-content>*:nth-child(2){animation-delay:75ms}
+.cinema-stage.is-changing .cinema-content>*:nth-child(3){animation-delay:135ms}
+@keyframes cinema-focus{from{opacity:.45;transform:scale(1.065)}to{opacity:1;transform:scale(1.015)}}
+@keyframes cinema-word-in{from{opacity:0;transform:translateY(13px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:900px){.cinema-stage{min-height:650px;padding:26px 30px}.cinema-content{width:min(75%,610px)}.cinema-hint{display:none}.cinema-step{flex-basis:184px}}
+@media(max-width:600px){.cinema-explorer{margin-top:18px}.cinema-stage{min-height:675px;padding:22px 20px 24px}.cinema-visual img{object-position:62% center;filter:brightness(.7) saturate(.78)}.cinema-visual::after{background:linear-gradient(0deg,#08090dfa 0%,#08090de9 28%,#090a0dba 59%,#090a0d1f 100%),linear-gradient(180deg,#08090d99,transparent 32%)}.cinema-signature{max-width:190px}.cinema-meta{align-items:flex-start}.cinema-content{width:100%;max-width:none;padding-top:200px;margin:auto 0 34px}.cinema-content h3{font-size:clamp(30px,8.1vw,44px);line-height:1.07;margin-bottom:15px}.cinema-synopsis{font-size:13.5px;line-height:1.57}.cinema-arrow{min-width:0;padding:12px 14px;min-height:48px}.cinema-controls{width:100%}.cinema-controls .cinema-arrow{flex:1}.cinema-step{flex-basis:163px;min-height:84px}.cinema-step img{height:62px;width:48px}.cinema-progress-label{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.cinema-stage.is-changing .cinema-visual img,.cinema-stage.is-changing .cinema-content>*{animation:none!important}.cinema-progress-fill,.cinema-step,.cinema-arrow{transition:none!important}}
