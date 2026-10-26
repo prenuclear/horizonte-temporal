@@ -8,6 +8,9 @@ content:
     path: contenido.json
     format: json
     fields:
+      - name: logo_portada
+        label: Logo de portada (PNG transparente; archivo de images o URL)
+        type: string
       - name: video_portada
         label: URL o ruta del video MP4 de portada
         type: string
