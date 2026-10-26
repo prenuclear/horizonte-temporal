@@ -8,3 +8,5 @@
 .hero-youtube{border:0;pointer-events:none;transform:scale(1.25);transform-origin:center}.hero{overflow:hidden}
 
 .hero-logo{width:min(100%,820px);height:auto;max-height:330px;object-fit:contain;object-position:left center;margin:30px 0;filter:none}@media(max-width:700px){.hero-logo{max-height:220px;margin:26px 0}}
+
+.closing-logo{display:block;width:min(75vw,540px);max-height:460px;height:auto;object-fit:contain;margin:20px auto 28px;filter:none}.closing #closingTitle{font-size:clamp(40px,6vw,84px);line-height:1;letter-spacing:-.055em}@media(max-width:650px){.closing-logo{width:min(86vw,370px);max-height:370px}}
