@@ -21,6 +21,15 @@ async function cargarContenido(){
   if(!response.ok)throw new Error('contenido.json no disponible');
   const data=await response.json();
   document.querySelectorAll('[data-content]').forEach(el=>{const value=data[el.dataset.content];if(typeof value==='string')el.textContent=value});
+
+  // Pages CMS devuelve /images/archivo.jpg; usar ruta relativa también en GitHub Pages.
+  const historiaImagen=document.querySelector('#historiaImagen');
+  if(historiaImagen && typeof data.imagen_historia==='string'){
+    const nombre=data.imagen_historia.trim().replace(/^\/?images\//i,'');
+    if(/^[^\/\\]+\.(?:jpe?g|png|webp|gif|avif)$/i.test(nombre) && !nombre.includes('..')){
+      historiaImagen.src='images/'+encodeURIComponent(nombre);
+    }
+  }
   configurarVideoProceso(data);
   if(Array.isArray(data.capitulos)&&data.capitulos.length){chapters.splice(0,chapters.length,...data.capitulos.map(c=>({title:c.titulo||'',image:c.imagen||'',text:c.texto||''})));chapterGrid.replaceChildren();pintarCapitulos()}
   if(Array.isArray(data.galeria)&&data.galeria.length){images.splice(0,images.length,...data.galeria.map(g=>[g.imagen||'',g.titulo||'',g.categoria||'cosmos']));renderGallery(document.querySelector('[data-filter].active')?.dataset.filter||'todos')}
