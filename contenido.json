@@ -15,7 +15,18 @@
     {
       "titulo": "LA CENIZA DE LOS ANTIGUOS",
       "imagen": "1000057951.jpg",
-      "texto": "Mucho antes de la historia humana, una materia extraterrestre, posteriormente identificada por el Príncipe como ceniza de fondo, descendió lentamente sobre la Tierra. Al penetrar en los organismos, alteró sus procesos biológicos y dio origen a nuevas formas de vida. Estas transformaciones marcaron el surgimiento de los primeros impulsos de supervivencia y temor, incluso antes de que existiera una conciencia capaz de reconocerlos."
+      "texto": "Mucho antes de la historia humana, una materia extraterrestre, posteriormente identificada por el Príncipe como ceniza de fondo, descendió lentamente sobre la Tierra. Al penetrar en los organismos, alteró sus procesos biológicos y dio origen a nuevas formas de vida. Estas transformaciones marcaron el surgimiento de los primeros impulsos de supervivencia y temor, incluso antes de que existiera una conciencia capaz de reconocerlos.",
+      "epigrafe": "Mucho antes de los registros humanos, algo comenzó a descender.",
+      "escenas": [
+        {
+          "imagen": "1000057950.jpg",
+          "texto": "La ceniza de fondo alteró la materia viva sin obedecer a una voluntad reconocible."
+        },
+        {
+          "imagen": "1000057955.jpg",
+          "texto": "Las nuevas formas aprendieron a sobrevivir antes de saber que podían desaparecer."
+        }
+      ]
     },
     {
       "titulo": "CONFLICTO DE LA EXTINCIÓN EXTRATERRENA",
