@@ -21,6 +21,7 @@ async function cargarContenido(){
   if(!response.ok)throw new Error('contenido.json no disponible');
   const data=await response.json();
   document.querySelectorAll('[data-content]').forEach(el=>{const value=data[el.dataset.content];if(typeof value==='string')el.textContent=value});
+  configurarVideoProceso(data);
   if(Array.isArray(data.capitulos)&&data.capitulos.length){chapters.splice(0,chapters.length,...data.capitulos.map(c=>({title:c.titulo||'',image:c.imagen||'',text:c.texto||''})));chapterGrid.replaceChildren();pintarCapitulos()}
   if(Array.isArray(data.galeria)&&data.galeria.length){images.splice(0,images.length,...data.galeria.map(g=>[g.imagen||'',g.titulo||'',g.categoria||'cosmos']));renderGallery(document.querySelector('[data-filter].active')?.dataset.filter||'todos')}
   const news=document.querySelector('#newsGrid');news.replaceChildren();
@@ -47,3 +48,31 @@ async function cargarContenido(){
 }
 
 cargarContenido();
+
+
+function configurarVideoProceso(data){
+ const mount=document.querySelector('#processVideoMount');
+ if(!mount)return;
+ const source=typeof data.video_proceso==='string'?data.video_proceso.trim():'';
+ const fallback='images/1000057954.jpg';
+ const posterRaw=typeof data.video_poster_proceso==='string'?data.video_poster_proceso.trim():'';
+ const poster=posterRaw&&/^(?:\\/?images\\/)?[^\\/\\\\]+\\.(?:jpe?g|png|webp)$/i.test(posterRaw)?'images/'+posterRaw.replace(/^\\/?images\\//i,''):fallback;
+ function showPoster(){const image=document.createElement('img');image.loading='lazy';image.src=poster;image.alt='Imagen del proceso creativo de Horizonte Temporal';mount.replaceChildren(image);}
+ if(!source){showPoster();return;}
+ let url;try{url=new URL(source,window.location.href)}catch(_){showPoster();return;}
+ const hostname=url.hostname.toLowerCase().replace(/^www\\./,'');
+ const isHttp=['http:','https:'].includes(url.protocol);
+ const youtubeHosts=['youtube.com','m.youtube.com','music.youtube.com','youtube-nocookie.com','youtu.be'];
+ let embed='';
+ if(isHttp&&youtubeHosts.includes(hostname)){
+  const id=hostname==='youtu.be'?url.pathname.split('/')[1]:url.searchParams.get('v')||url.pathname.match(/^\\/(?:embed|shorts|live)\\/([\\w-]{11})/)?.[1];
+  if(id&&/^[\\w-]{11}$/.test(id))embed='https://www.youtube-nocookie.com/embed/'+id+'?rel=0';
+ }else if(isHttp&&(hostname==='vimeo.com'||hostname==='player.vimeo.com')){
+  const id=url.pathname.match(/(?:^\\/|\\/video\\/)([0-9]+)(?:\\/|$)/)?.[1];
+  if(id)embed='https://player.vimeo.com/video/'+id;
+ }
+ if(embed){const frame=document.createElement('iframe');frame.src=embed;frame.title='Proceso creativo de Horizonte Temporal';frame.loading='lazy';frame.setAttribute('allow','accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen');frame.allowFullscreen=true;frame.referrerPolicy='strict-origin-when-cross-origin';mount.replaceChildren(frame);return;}
+ const isVideo=isHttp&&/\\.(?:mp4|webm)$/i.test(url.pathname)&&(url.origin===window.location.origin||url.protocol==='https:');
+ if(isVideo){const video=document.createElement('video');video.src=url.href;video.controls=true;video.preload='metadata';video.playsInline=true;video.poster=poster;video.setAttribute('aria-label','Video del proceso creativo de Horizonte Temporal');mount.replaceChildren(video);return;}
+ showPoster();
+}
