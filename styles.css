@@ -10,3 +10,18 @@
 .hero-logo{width:min(100%,820px);height:auto;max-height:330px;object-fit:contain;object-position:left center;margin:30px 0;filter:none}@media(max-width:700px){.hero-logo{max-height:220px;margin:26px 0}}
 
 .closing-logo{display:block;width:min(75vw,540px);max-height:460px;height:auto;object-fit:contain;margin:20px auto 28px;filter:none}.closing #closingTitle{font-size:clamp(40px,6vw,84px);line-height:1;letter-spacing:-.055em}@media(max-width:650px){.closing-logo{width:min(86vw,370px);max-height:370px}}
+
+
+/* 05 — Proceso creativo: texto sin repeticiones + reproductor adaptable */
+.process-grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center;gap:clamp(28px,6vw,96px)}
+.process-copy{min-width:0}
+.process-copy .kicker{margin-bottom:24px}
+.process-copy h2{margin-bottom:32px}
+.process-copy .process-story{white-space:pre-line;overflow-wrap:anywhere;font-size:clamp(15px,1.22vw,17px);line-height:1.85;color:#c7c4c0;letter-spacing:normal;text-transform:none}
+.process-media{min-width:0}
+.process-video-player{width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;background:#17191e;border:1px solid #ffffff3b;box-shadow:0 18px 60px #0007}
+.process-video-player iframe,.process-video-player video,.process-video-player>img{display:block;width:100%;height:100%;max-height:none;object-fit:cover;border:0}
+.process-video-player iframe{position:absolute;inset:0;aspect-ratio:16/9}
+.process-video-caption{font-size:10px!important;letter-spacing:.16em;line-height:1.65!important;color:#a8a3a0!important;text-transform:uppercase;margin:16px 0 0}
+@media(max-width:900px){.process-grid{grid-template-columns:1fr;gap:36px}.process-media{max-width:760px}}
+@media(max-width:600px){.process-copy h2{margin-bottom:24px}.process-copy .process-story{font-size:15px}.process-video-caption{margin-top:12px}}
