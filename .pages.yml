@@ -78,8 +78,8 @@ content:
             list: true
             fields:
               - name: imagen
-                label: Nombre de imagen (archivo dentro de images)
-                type: string
+                label: Imagen de la escena (elige una existente o sube una nueva)
+                type: image
               - name: texto
                 label: Texto breve que aparece en la escena
                 type: text
