@@ -44,3 +44,30 @@
 @media(max-width:900px){.cinema-stage{min-height:650px;padding:26px 30px}.cinema-content{width:min(75%,610px)}.cinema-hint{display:none}.cinema-step{flex-basis:184px}}
 @media(max-width:600px){.cinema-explorer{margin-top:18px}.cinema-stage{min-height:675px;padding:22px 20px 24px}.cinema-visual img{object-position:62% center;filter:brightness(.7) saturate(.78)}.cinema-visual::after{background:linear-gradient(0deg,#08090dfa 0%,#08090de9 28%,#090a0dba 59%,#090a0d1f 100%),linear-gradient(180deg,#08090d99,transparent 32%)}.cinema-signature{max-width:190px}.cinema-meta{align-items:flex-start}.cinema-content{width:100%;max-width:none;padding-top:200px;margin:auto 0 34px}.cinema-content h3{font-size:clamp(30px,8.1vw,44px);line-height:1.07;margin-bottom:15px}.cinema-synopsis{font-size:13.5px;line-height:1.57}.cinema-arrow{min-width:0;padding:12px 14px;min-height:48px}.cinema-controls{width:100%}.cinema-controls .cinema-arrow{flex:1}.cinema-step{flex-basis:163px;min-height:84px}.cinema-step img{height:62px;width:48px}.cinema-progress-label{font-size:9px}}
 @media(prefers-reduced-motion:reduce){.cinema-stage.is-changing .cinema-visual img,.cinema-stage.is-changing .cinema-content>*{animation:none!important}.cinema-progress-fill,.cinema-step,.cinema-arrow{transition:none!important}}
+
+/* Horizonte Temporal: secuencias con fundidos y movimiento de cámara */
+.cinema-visual .cinema-shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.025);filter:brightness(.79) saturate(.84);transition:opacity 1400ms ease;will-change:opacity,transform}
+.cinema-visual .cinema-shot.is-visible{opacity:1;animation:cinema-drift 18s ease-in-out both}
+.cinema-visual .cinema-shot:nth-child(2).is-visible{animation-name:cinema-drift-reverse}
+@keyframes cinema-drift{from{transform:scale(1.025) translate3d(0,0,0)}to{transform:scale(1.105) translate3d(-1%,1%,0)}}
+@keyframes cinema-drift-reverse{from{transform:scale(1.105) translate3d(1%,0,0)}to{transform:scale(1.025) translate3d(0,0,0)}}
+.cinema-sequence[hidden]{display:none!important}
+.cinema-sequence{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:20px;margin:0 0 24px;padding:18px 0;border-top:1px solid #c7b5a552;border-bottom:1px solid #c7b5a552}
+.cinema-sequence-copy{min-width:0;flex:1;max-width:640px}
+.cinema-sequence-label{color:var(--accent);font-size:10px;letter-spacing:.17em;font-weight:700}
+.cinema-sequence-counter{color:#e9dcd4;white-space:nowrap;margin-left:12px;font-variant-numeric:tabular-nums}
+.cinema-scene-caption{margin:8px 0 0;color:#e6e1dd;line-height:1.5;font-size:13px;text-wrap:pretty;max-width:580px}
+.cinema-sequence-actions{display:flex;align-items:center;gap:19px;flex-shrink:0}
+.cinema-scene-dots{display:flex;gap:8px;align-items:center}
+.cinema-scene-dot{width:28px;height:28px;display:grid;place-items:center;border:1px solid transparent;border-radius:50%;background:transparent;color:#eee}
+.cinema-scene-dot::after{content:"";display:block;width:7px;height:7px;border-radius:50%;background:#bdb1aa;transition:background .25s,transform .25s}
+.cinema-scene-dot[aria-pressed="true"]{border-color:var(--accent)}
+.cinema-scene-dot[aria-pressed="true"]::after{background:var(--accent);transform:scale(1.25)}
+.cinema-play{white-space:nowrap;background:#16171acf;border:1px solid #ac9790;color:#eee;font-size:10px;letter-spacing:.12em;padding:13px 16px;min-height:44px}
+.cinema-play:hover,.cinema-play[aria-pressed="true"]{border-color:var(--accent);background:#342520}
+.cinema-scene-dot:focus-visible,.cinema-play:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.cinema-stage:has(.cinema-sequence:not([hidden])){min-height:745px}
+.cinema-stage:has(.cinema-sequence:not([hidden])) .cinema-content{margin-bottom:28px}
+@media(max-width:900px){.cinema-sequence{align-items:flex-start;flex-direction:column;gap:15px}.cinema-sequence-actions{width:100%;justify-content:space-between}}
+@media(max-width:600px){.cinema-stage:has(.cinema-sequence:not([hidden])){min-height:755px}.cinema-stage:has(.cinema-sequence:not([hidden])) .cinema-content{padding-top:125px;margin-bottom:22px}.cinema-sequence{margin-bottom:18px;padding:13px 0}.cinema-scene-caption{font-size:12px}.cinema-sequence-actions{gap:10px}.cinema-play{padding:11px 13px}}
+@media(prefers-reduced-motion:reduce){.cinema-visual .cinema-shot,.cinema-visual .cinema-shot.is-visible{animation:none!important;transition:none!important}.cinema-scene-dot::after{transition:none!important}}
