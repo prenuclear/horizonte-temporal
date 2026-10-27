@@ -69,6 +69,20 @@ content:
           - name: texto
             label: Sinopsis
             type: text
+          - name: epigrafe
+            label: Secuencia cinematográfica - texto de la escena inicial
+            type: text
+          - name: escenas
+            label: Secuencia cinematográfica - escenas adicionales (máximo 7)
+            type: object
+            list: true
+            fields:
+              - name: imagen
+                label: Nombre de imagen (archivo dentro de images)
+                type: string
+              - name: texto
+                label: Texto breve que aparece en la escena
+                type: text
       - name: galeria
         label: Galería
         type: object
