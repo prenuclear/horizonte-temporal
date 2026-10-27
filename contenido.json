@@ -3,8 +3,6 @@
   "video_portada": "https://www.youtube.com/watch?v=nTtJQ5hLjwA",
   "video_poster": "1000057951.jpg",
   "galeria_ayuda": "Selecciona una imagen para verla en grande. Las ilustraciones se conservan sin intervenciones.",
-  "proceso_descripcion": "El universo visual de Horizonte Temporal se ha construido durante unos quince años, combinando dibujo, escultura, maquetas, fotografía, modelado e impresión 3D y composición digital.",
-  "proceso_cierre": "Las imágenes se transforman y se relacionan entre sí para dar forma a los personajes, escenarios y situaciones de la novela gráfica.",
   "contacto_texto": "Para consultas, colaboraciones o información sobre la novela gráfica, puedes contactar al autor.",
   "contacto_email": "prenuclear@gmail.com",
   "presentacion": "Un espacio para conocer el universo narrativo y visual de Horizonte Temporal, una novela gráfica de ciencia ficción que reúne personajes, criaturas y escenarios donde se cruzan distintos mundos y tiempos.",
@@ -149,5 +147,7 @@
     "descripcion": "La edición impresa está en preparación. Aquí anunciaremos el lanzamiento y los lugares donde conseguirla.",
     "estado": "PRÓXIMAMENTE",
     "imagen": "1000057951.jpg"
-  }
+  },
+  "video_proceso": "https://www.youtube.com/watch?v=nTtJQ5hLjwA",
+  "video_poster_proceso": "/images/1000057954.jpg"
 }
