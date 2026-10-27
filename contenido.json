@@ -19,11 +19,11 @@
       "epigrafe": "Mucho antes de los registros humanos, algo comenzó a descender.",
       "escenas": [
         {
-          "imagen": "1000057950.jpg",
+          "imagen": "/images/1000057950.jpg",
           "texto": "La ceniza de fondo alteró la materia viva sin obedecer a una voluntad reconocible."
         },
         {
-          "imagen": "1000057955.jpg",
+          "imagen": "/images/1000057955.jpg",
           "texto": "Las nuevas formas aprendieron a sobrevivir antes de saber que podían desaparecer."
         }
       ]
