@@ -20,12 +20,6 @@ content:
       - name: galeria_ayuda
         label: Texto de ayuda de la galería
         type: text
-      - name: proceso_descripcion
-        label: Proceso - descripción
-        type: text
-      - name: proceso_cierre
-        label: Proceso - cierre
-        type: text
       - name: contacto_texto
         label: Contacto - presentación
         type: text
@@ -53,8 +47,14 @@ content:
         label: Historia - párrafo 2
         type: text
       - name: proceso_1
-        label: Proceso creativo
+        label: Detrás de las imágenes - texto principal
         type: text
+      - name: video_proceso
+        label: Detrás de las imágenes - video (URL de YouTube, Vimeo o MP4/WebM)
+        type: string
+      - name: video_poster_proceso
+        label: Detrás de las imágenes - imagen de portada del video (para MP4/WebM)
+        type: image
       - name: capitulos
         label: Siete capítulos
         type: object
