@@ -13,10 +13,14 @@
   explorer.hidden = true;
   explorer.innerHTML = `
     <div class="cinema-stage" tabindex="0" role="region" aria-label="Recorrido cinematográfico por los capítulos">
-      <div class="cinema-visual" aria-hidden="true"><img alt=""></div>
+      <div class="cinema-visual" aria-hidden="true"><img class="cinema-shot is-visible" alt=""><img class="cinema-shot" alt=""></div>
       <div class="cinema-meta"><span class="cinema-signature">HORIZONTE TEMPORAL / ARCHIVO NARRATIVO</span><span class="cinema-count"></span></div>
       <div class="cinema-content" aria-live="polite" aria-atomic="true">
         <p class="cinema-eyebrow"></p><h3></h3><p class="cinema-synopsis"></p>
+      </div>
+      <div class="cinema-sequence" hidden aria-label="Escenas de este capítulo">
+        <div class="cinema-sequence-copy"><span class="cinema-sequence-label">SECUENCIA DE IMÁGENES <span class="cinema-sequence-counter"></span></span><p class="cinema-scene-caption" aria-live="polite"></p></div>
+        <div class="cinema-sequence-actions"><div class="cinema-scene-dots" role="group" aria-label="Seleccionar escena"></div><button type="button" class="cinema-play" aria-label="Reproducir secuencia" aria-pressed="false">▶ REPRODUCIR</button></div>
       </div>
       <div class="cinema-footer">
         <div class="cinema-controls">
@@ -33,7 +37,12 @@
   grid.before(explorer);
 
   const stage = explorer.querySelector('.cinema-stage');
-  const visual = explorer.querySelector('.cinema-visual img');
+  const visualLayers = Array.from(explorer.querySelectorAll('.cinema-visual .cinema-shot'));
+  const sequencePanel = explorer.querySelector('.cinema-sequence');
+  const sequenceCounter = explorer.querySelector('.cinema-sequence-counter');
+  const sequenceCaption = explorer.querySelector('.cinema-scene-caption');
+  const sequenceDots = explorer.querySelector('.cinema-scene-dots');
+  const playButton = explorer.querySelector('.cinema-play');
   const counter = explorer.querySelector('.cinema-count');
   const eyebrow = explorer.querySelector('.cinema-eyebrow');
   const title = explorer.querySelector('.cinema-content h3');
@@ -46,6 +55,93 @@
   let entries = [];
   let active = 0;
   let initialized = false;
+  let cmsChapters = [];
+  let scenes = [];
+  let activeScene = 0;
+  let currentLayer = 0;
+  let imageRequest = 0;
+  let playback = null;
+  const sceneDuration = 6800;
+
+  function stopPlayback() {
+    if (playback !== null) { window.clearInterval(playback); playback = null; }
+    playButton.textContent = '▶ REPRODUCIR';
+    playButton.setAttribute('aria-pressed', 'false');
+    playButton.setAttribute('aria-label', 'Reproducir secuencia');
+  }
+  function togglePlayback() {
+    if (playback !== null) { stopPlayback(); return; }
+    if (scenes.length < 2) return;
+    playButton.textContent = 'Ⅱ PAUSAR';
+    playButton.setAttribute('aria-pressed', 'true');
+    playButton.setAttribute('aria-label', 'Pausar secuencia');
+    playback = window.setInterval(() => showScene((activeScene + 1) % scenes.length), sceneDuration);
+  }
+  function imagePath(input) {
+    if (typeof input !== 'string') return '';
+    const filename = input.trim().replace(/^images\//i, '');
+    return /^(?!\.)(?!.*\.\.)[^\/\\<>:"|?*]+\.(?:jpe?g|png|webp|gif)$/i.test(filename) ? 'images/' + filename : '';
+  }
+  function updateImage(src) {
+    if (!src) return;
+    const request = ++imageRequest;
+    const nextLayer = 1 - currentLayer;
+    const incoming = visualLayers[nextLayer];
+    const outgoing = visualLayers[currentLayer];
+    if (outgoing.getAttribute('src') === src && outgoing.classList.contains('is-visible')) return;
+    incoming.classList.remove('is-visible');
+    incoming.onload = () => {
+      if (request !== imageRequest) return;
+      incoming.classList.add('is-visible');
+      outgoing.classList.remove('is-visible');
+      currentLayer = nextLayer;
+    };
+    incoming.onerror = () => {
+      if (request === imageRequest) incoming.classList.remove('is-visible');
+    };
+    incoming.src = src;
+    if (incoming.complete && incoming.naturalWidth > 0) incoming.onload();
+  }
+  function showScene(index) {
+    if (!scenes.length) return;
+    activeScene = (index + scenes.length) % scenes.length;
+    const scene = scenes[activeScene];
+    updateImage(scene.image);
+    sequenceCounter.textContent = num(activeScene + 1) + ' / ' + num(scenes.length);
+    sequenceCaption.textContent = scene.text;
+    Array.from(sequenceDots.children).forEach((button, i) => {
+      button.setAttribute('aria-pressed', String(i === activeScene));
+      button.setAttribute('aria-label', 'Mostrar escena ' + (i + 1) + ' de ' + scenes.length);
+    });
+    const following = scenes[(activeScene + 1) % scenes.length];
+    if (following && following.image !== scene.image) {
+      const preload = new Image();
+      preload.src = following.image;
+    }
+  }
+  function setupScenes(chapterIndex) {
+    stopPlayback();
+    const chapter = cmsChapters[chapterIndex] || {};
+    const primaryImage = imagePath(entries[chapterIndex]?.image) || entries[chapterIndex]?.image || '';
+    scenes = [{ image: primaryImage, text: chapter.epigrafe || '' }];
+    if (Array.isArray(chapter.escenas)) {
+      for (const scene of chapter.escenas.slice(0, 7)) {
+        const path = imagePath(scene?.imagen);
+        if (path) scenes.push({ image: path, text: typeof scene.texto === 'string' ? scene.texto : '' });
+      }
+    }
+    sequencePanel.hidden = scenes.length < 2;
+    sequenceDots.replaceChildren();
+    scenes.forEach((scene, i) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'cinema-scene-dot';
+      button.addEventListener('click', () => showScene(i));
+      sequenceDots.append(button);
+    });
+    showScene(0);
+  }
+
 
   function readEntries() {
     return Array.from(grid.querySelectorAll(':scope > .chapter')).map(card => ({
@@ -67,8 +163,7 @@
     active = nextIndex;
     const entry = entries[active];
 
-    visual.src = entry.image;
-    visual.alt = '';
+    setupScenes(active);
     counter.textContent = `${num(active + 1)} — ${num(entries.length)}`;
     eyebrow.textContent = `CAPÍTULO ${num(active + 1)} / ${num(entries.length)}`;
     title.textContent = entry.title;
@@ -136,10 +231,24 @@
     initialized = true;
   }
 
+  playButton.addEventListener('click', togglePlayback);
+  document.addEventListener('visibilitychange', () => { if (document.hidden) stopPlayback(); });
+  window.addEventListener('pagehide', stopPlayback);
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([record]) => {
+      if (!record.isIntersecting) stopPlayback();
+    }, { threshold: 0.12 }).observe(stage);
+  }
+  // Pages CMS guarda las escenas en contenido.json; los otros capítulos permanecen intactos.
+  fetch('contenido.json', { cache: 'no-store' })
+    .then(response => { if (!response.ok) throw Error('No se pudo leer el contenido'); return response.json(); })
+    .then(data => { cmsChapters = Array.isArray(data.capitulos) ? data.capitulos : []; if (entries.length) setupScenes(active); })
+    .catch(() => { /* La navegación básica sigue funcionando sin este archivo. */ });
+
   previous.addEventListener('click', () => activate(active - 1, { url: true, animate: true }));
   next.addEventListener('click', () => activate(active + 1, { url: true, animate: true }));
   explorer.addEventListener('keydown', event => {
-    if (event.altKey || event.ctrlKey || event.metaKey) return;
+    if (event.altKey || event.ctrlKey || event.metaKey || event.target.closest('.cinema-sequence')) return;
     if (event.key === 'ArrowRight' && active < entries.length - 1) {
       event.preventDefault(); activate(active + 1, { url: true, animate: true });
     }
