@@ -79,7 +79,7 @@
   }
   function imagePath(input) {
     if (typeof input !== 'string') return '';
-    const filename = input.trim().replace(/^images\//i, '');
+    const filename = input.trim().replace(/^\/?images\//i, '');
     return /^(?!\.)(?!.*\.\.)[^\/\\<>:"|?*]+\.(?:jpe?g|png|webp|gif)$/i.test(filename) ? 'images/' + filename : '';
   }
   function updateImage(src) {
