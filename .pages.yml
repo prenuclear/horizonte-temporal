@@ -43,6 +43,9 @@ content:
       - name: historia_1
         label: Historia - párrafo 1
         type: text
+      - name: imagen_historia
+        label: Historia - imagen principal (elige o sube una imagen)
+        type: image
       - name: proceso_1
         label: Detrás de las imágenes - texto principal
         type: text
