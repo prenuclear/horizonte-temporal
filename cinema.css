@@ -71,3 +71,9 @@
 @media(max-width:900px){.cinema-sequence{align-items:flex-start;flex-direction:column;gap:15px}.cinema-sequence-actions{width:100%;justify-content:space-between}}
 @media(max-width:600px){.cinema-stage:has(.cinema-sequence:not([hidden])){min-height:755px}.cinema-stage:has(.cinema-sequence:not([hidden])) .cinema-content{padding-top:125px;margin-bottom:22px}.cinema-sequence{margin-bottom:18px;padding:13px 0}.cinema-scene-caption{font-size:12px}.cinema-sequence-actions{gap:10px}.cinema-play{padding:11px 13px}}
 @media(prefers-reduced-motion:reduce){.cinema-visual .cinema-shot,.cinema-visual .cinema-shot.is-visible{animation:none!important;transition:none!important}.cinema-scene-dot::after{transition:none!important}}
+
+
+/* El movimiento lento también continúa después de cambiar de capítulo. */
+.cinema-stage.is-changing .cinema-visual .cinema-shot.is-visible{animation:cinema-drift 18s ease-in-out both}
+.cinema-stage.is-changing .cinema-visual .cinema-shot:nth-child(2).is-visible{animation-name:cinema-drift-reverse}
+@media(prefers-reduced-motion:reduce){.cinema-stage.is-changing .cinema-visual .cinema-shot.is-visible{animation:none!important}}
