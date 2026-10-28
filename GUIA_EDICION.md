@@ -1,53 +1,48 @@
-# Horizonte Temporal — Guía de edición
+# Horizonte Temporal — Guía rápida de Pages CMS
 
-La web se administra en https://pagescms.org/ usando GitHub `prenuclear/horizonte-temporal`.
+## Dónde editar
 
-## Galería: siete capítulos, tres imágenes cada uno
+1. Abre **https://app.pagescms.org/** e inicia sesión con tu cuenta de GitHub.
+2. Selecciona el repositorio **prenuclear/horizonte-temporal** y la rama **main**.
+3. Abre **«EDITAR HORIZONTE TEMPORAL — secciones en orden de la web»**.
+4. Los apartados aparecen en el siguiente orden, de arriba hacia abajo. Abre cada apartado para editar sus campos y guarda los cambios.
 
-1. Abrir «Contenidos de Horizonte Temporal» → «Siete capítulos».
-2. Seleccionar un capítulo y buscar «Galería de este capítulo».
-3. Editar sus tres elementos: «Imagen de la galería» y «Pie de foto».
-4. Para cambiar una imagen, elegir otra en la biblioteca de Pages CMS o subir un archivo.
-5. Para retirar una imagen, borrar su elemento de la lista o vaciar su campo. La web no muestra espacios en blanco.
-6. Mostrar un máximo de tres imágenes por capítulo. Si necesitas más, ajustaremos el diseño.
+## Apartados del CMS, en el mismo orden que el sitio
 
-Hay 21 posiciones iniciales pero 13 imágenes distintas. Algunas se repiten temporalmente para permitir su reemplazo más adelante.
+1. **ENCABEZADO Y NAVEGACIÓN** — nombre y enlaces del menú.
+2. **PORTADA / INICIO** — logo, imagen, video y texto de presentación.
+3. **01 / LA HISTORIA** — título, texto principal e imagen.
+4. **CITA DESTACADA / IMAGEN Y TEXTO** — imagen detrás de la cita y sus tres textos.
+5. **04 / ARCHIVO VISUAL — ENCABEZADO** — título y texto de presentación de la galería.
+6. **ARCHIVO VISUAL — SIETE CAPÍTULOS Y TRES IMÁGENES CADA UNO** — abre el capítulo, luego cada una de las tres imágenes.
+7. **05 / DETRÁS DE LAS IMÁGENES** — texto, URL del video e imagen de respaldo.
+8. **06 / BITÁCORA — ENCABEZADO** — título y textos de la sección Noticias.
+9. **BITÁCORA — NOTICIAS PUBLICADAS O EN BORRADOR** — noticias, imágenes, textos y enlaces.
+10. **07 / EDICIÓN IMPRESA Y DÓNDE COMPRAR** — imagen de la publicación, precio, disponibilidad y tiendas.
+11. **08 / CONTACTO Y REDES SOCIALES** — correo, presentación y redes.
+12. **CIERRE DE LA PÁGINA** — imagen de fondo, logo y textos.
+13. **PIE DE PÁGINA** — nombre y créditos del sitio.
 
-## Resto de las imágenes
+Los capítulos y las noticias son listas plegables: se muestra un encabezado compacto y puedes abrir solo el que necesitas.
 
-- Portada: «Portada - imagen de fondo», «Logo de portada» y «Portada - imagen de respaldo del video».
-- Historia: «Historia - imagen principal».
-- Fragmento: «Fragmento - imagen de fondo».
-- Capítulos: «Capítulo - imagen protagonista», escenas e imágenes de galería.
-- Detrás de las imágenes: «imagen de portada del video»; el propio video se cambia por URL.
-- Noticias: cada noticia tiene «Imagen de la noticia».
-- Dónde comprar: «Imagen de la edición impresa».
-- Cierre: «Cierre - imagen de fondo» y «Cierre - logo», independiente del de portada.
+### Cómo cambiar la imagen de la cita
 
-Una imagen vacía se oculta en el sitio. Si un video sigue activo, puede verse sobre la imagen de fondo, aunque esta se haya retirado.
+Abre **«CITA DESTACADA / IMAGEN Y TEXTO»**, situado justo después de **«01 / LA HISTORIA»**. En el campo **«CAMBIAR IMAGEN DE FONDO DE LA CITA»** selecciona un archivo de la biblioteca, sube uno nuevo o quita la selección para ocultar la imagen. Más abajo puedes editar el rótulo, la cita y el crédito.
 
-## Textos
+### Cómo cambiar imágenes de la galería
 
-Los textos de portada, Historia, Proceso, capítulos, galería, noticias, compra y contacto se encuentran en sus campos habituales. Los encabezados, menús, rótulos, mensajes cortos y pie de página están agrupados bajo «Textos y rótulos de todas las secciones».
+Abre **«ARCHIVO VISUAL — SIETE CAPÍTULOS Y TRES IMÁGENES CADA UNO»**. Expande el capítulo que quieres actualizar y, dentro de él, la imagen correspondiente. Puedes cambiar o quitar una imagen sin modificar el resto del capítulo.
 
-Dejar vacío un texto opcional lo oculta. En algunos títulos se usa `[palabra]` para resaltar esa palabra en color; puedes modificar o retirar los corchetes. Usa un salto de línea si quieres dividir el título en dos líneas.
+### Lo que se retiró del editor
 
-Las imágenes existentes se conservan en la carpeta `images`. Eliminar una imagen del sitio no borra su archivo de GitHub.
+Se retiraron los campos de las secciones eliminadas (Estructura narrativa y Atlas), el grupo global de 45 textos mezclados, las escenas del antiguo explorador cinematográfico que ya no se muestra y las opciones de contenido sin uso. Sus valores no se perdieron: todos los textos visibles se migraron a su apartado y existe un respaldo de los datos anteriores en `respaldo-contenido-2026-10-28.json`.
 
-## Publicar
+Los siete capítulos de galería y las noticias se conservan. El respaldo también contiene las antiguas sinopsis e imágenes del explorador, para recuperarlas si se vuelve a utilizar ese formato.
 
-Guardar los cambios en Pages CMS crea una modificación en GitHub. Si Netlify está conectado a la rama `main`, publicará la actualización automáticamente. Tras el despliegue, usar Ctrl+F5 para comprobar los cambios.
+## ¿No aparece la nueva organización?
 
-Fecha de reorganización: 28 de octubre de 2026.
+Comprueba que estás en **prenuclear/horizonte-temporal**, rama **main**, y que abriste el documento **«EDITAR HORIZONTE TEMPORAL — secciones en orden de la web»**. Recarga Pages CMS con Ctrl + F5 o vuelve a abrir el repositorio. El CMS lee `.pages.yml` de la rama seleccionada.
 
-## Nota de estructura (28 de octubre de 2026)
+Guardar en Pages CMS actualiza el repositorio GitHub. Netlify publicará los cambios si está conectado a esa rama. Las imágenes se almacenan en `images`; quitarlas de una sección no borra el archivo físico.
 
-Se retiró la sección duplicada «02 / ESTRUCTURA NARRATIVA» y su acceso del menú. Los siete capítulos y sus galerías de tres imágenes siguen funcionando dentro de «04 / ARCHIVO VISUAL»; todos son editables desde Pages CMS. Las escenas del explorador cinematográfico anterior permanecen preservadas dentro de `contenido.json`, pero no se muestran en la web ni como campos de edición porque esa sección se retiró. Los números de las demás secciones se conservan por ahora.
-
-## Sección Atlas retirada
-
-Se eliminó «03 / ATLAS DEL UNIVERSO» y sus tres fichas de la web y de Pages CMS. Se conservan «04 / ARCHIVO VISUAL», sus siete capítulos y las tres imágenes de cada capítulo. Los archivos de imagen compartidos con otras secciones permanecen en el repositorio. Los números de las secciones restantes se mantienen.
-
-## Editar la imagen detrás de la cita
-
-En Pages CMS, abre `Contenidos de Horizonte Temporal` y el primer apartado **«CITA DESTACADA — imagen de fondo y textos»**. En **«IMAGEN DE LA CITA — cambiar, subir o quitar»**, elige una imagen de la biblioteca o súbela. Si vacías el campo, se oculta la imagen. En este mismo apartado también puedes editar los textos superior, principal e inferior de la cita.
+*Actualizado: 28 de octubre de 2026.*
