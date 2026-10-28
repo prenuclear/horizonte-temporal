@@ -47,3 +47,7 @@ Se retiró la sección duplicada «02 / ESTRUCTURA NARRATIVA» y su acceso del m
 ## Sección Atlas retirada
 
 Se eliminó «03 / ATLAS DEL UNIVERSO» y sus tres fichas de la web y de Pages CMS. Se conservan «04 / ARCHIVO VISUAL», sus siete capítulos y las tres imágenes de cada capítulo. Los archivos de imagen compartidos con otras secciones permanecen en el repositorio. Los números de las secciones restantes se mantienen.
+
+## Editar la imagen detrás de la cita
+
+En Pages CMS, abre `Contenidos de Horizonte Temporal` y el primer apartado **«CITA DESTACADA — imagen de fondo y textos»**. En **«IMAGEN DE LA CITA — cambiar, subir o quitar»**, elige una imagen de la biblioteca o súbela. Si vacías el campo, se oculta la imagen. En este mismo apartado también puedes editar los textos superior, principal e inferior de la cita.
