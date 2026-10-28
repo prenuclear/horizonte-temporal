@@ -15,7 +15,6 @@
   "presentacion": "Horizonte Temporal es una novela gráfica de ciencia ficción que explora distintos mundos y tiempos a través de sus personajes, criaturas y escenarios. En este sitio podrás conocer la historia, descubrir sus ilustraciones y seguir los avances del proyecto.",
   "historia_1": "A través de distintas versiones de un personaje llamado el Príncipe, la historia reconstruye las transformaciones de la Tierra: un planeta donde la caída de una misteriosa ceniza, proveniente de civilizaciones extinguidas, altera el curso de la evolución de las especies.\n\nEsta materia, que conserva los rastros de innumerables formas de vida, abre nuevas posibilidades biológicas y desencadena acontecimientos que desafían las leyes del tiempo y de la conciencia. Entre viajes espaciales, criaturas desconocidas y mundos que comienzan a superponerse, la humanidad descubre que quizá no sea el origen de la vida, sino su último intento por sobrevivir a la extinción del universo.",
   "imagen_historia": "/images/22-1.jpg",
-  "imagen_cita": "/images/1000057950.jpg",
   "imagen_cierre": "/images/1000057945.jpg",
   "proceso_1": "El universo visual de Horizonte Temporal se ha construido a lo largo de unos quince años, a partir de ilustraciones que originalmente surgieron de manera independiente y que, con el tiempo, comenzaron a formar parte de un mismo proyecto. Su desarrollo combina dibujo, escultura manual, construcción de maquetas, modificación de figuras existentes, modelado e impresión 3D, fotografía y composición digital. \n\nA través de estos procedimientos, las imágenes han sido intervenidas y transformadas, incorporando nuevos elementos y estableciendo relaciones entre trabajos realizados en distintos momentos. Este proceso de experimentación, que transita constantemente entre lo físico y lo digital, ha permitido desarrollar los personajes, escenarios y situaciones que hoy conforman el universo narrativo de la novela gráfica.",
   "video_proceso": "https://youtube.com/shorts/tzL-7vUZB8c",
@@ -38,9 +37,6 @@
     "historia_entrada": "UN VIAJE HACIA EL FINAL DE LAS POSIBILIDADES",
     "historia_titulo": "El cosmos guarda\nuna [última] transformación.",
     "historia_pie": "EL MUNDO DESPUÉS DEL MUNDO",
-    "cita_rotulo": "FRAGMENTO / ARCHIVO DEL COSMOS",
-    "cita_texto": "«La materia había agotado sus combinaciones. Lo que llegó después no era muerte: era otra manera de existir».",
-    "cita_credito": "FRAGMENTO NARRATIVO PROVISIONAL",
     "galeria_indice": "04 / ARCHIVO VISUAL",
     "galeria_subtitulo": "7 CAPÍTULOS · 21 ESPACIOS VISUALES",
     "galeria_titulo": "Fragmentos de [otros mundos.]",
@@ -240,5 +236,11 @@
     "descripcion": "La edición impresa está en preparación. Aquí anunciaremos el lanzamiento y los lugares donde conseguirla.",
     "estado": "PRÓXIMAMENTE",
     "imagen": "/images/1000057951.jpg"
+  },
+  "cita_destacada": {
+    "imagen": "/images/1000057950.jpg",
+    "rotulo": "FRAGMENTO / ARCHIVO DEL COSMOS",
+    "texto": "«La materia había agotado sus combinaciones. Lo que llegó después no era muerte: era otra manera de existir».",
+    "credito": "FRAGMENTO NARRATIVO PROVISIONAL"
   }
 }
