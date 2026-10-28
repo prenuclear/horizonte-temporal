@@ -75,17 +75,6 @@ function gallery(data){
  dialog.onclick=e=>{if(e.target===dialog)dialog.close();};
  document.addEventListener('keydown',e=>{if(!dialog.open)return;if(e.key==='ArrowLeft')show(selected-1);if(e.key==='ArrowRight')show(selected+1);});
 }
-function atlas(data){
- const root=$('#atlasGrid');if(!root)return;root.replaceChildren();
- (Array.isArray(data.atlas)?data.atlas:[]).forEach(card=>{
-  if(!card||![card.imagen,card.etiqueta,card.titulo,card.texto].some(v=>v&&String(v).trim()))return;
-  const a=el('article','atlas-feature'),src=imagePath(card.imagen);
-  if(src){const im=el('img');im.src=src;im.alt=card.titulo||'Ilustración';im.loading='lazy';a.append(im);}
-  const box=el('div');child(box,'span','',card.etiqueta);child(box,'h3','',card.titulo);child(box,'p','',card.texto);
-  a.append(box);root.append(a);
- });
- root.hidden=!root.children.length;
-}
 function news(data){
  const root=$('#newsGrid');if(!root)return;root.replaceChildren();
  (Array.isArray(data.noticias)?data.noticias:[]).filter(n=>n.publicar!==false).sort((a,b)=>(b.fecha||'').localeCompare(a.fecha||'')).forEach(n=>{
@@ -163,7 +152,7 @@ function nav(){
 async function init(){
  nav();
  try{const r=await fetch('contenido.json',{cache:'no-store'});if(!r.ok)throw Error('Contenido no disponible');const data=await r.json();
-  copy(data);gallery(data);atlas(data);news(data);buy(data);media(data);contact(data);
+  copy(data);gallery(data);news(data);buy(data);media(data);contact(data);
  }catch(error){console.warn('Error cargando contenido.json en Horizonte Temporal',error);}
 }
 init();
