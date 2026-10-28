@@ -46,3 +46,7 @@ Comprueba que estás en **prenuclear/horizonte-temporal**, rama **main**, y que 
 Guardar en Pages CMS actualiza el repositorio GitHub. Netlify publicará los cambios si está conectado a esa rama. Las imágenes se almacenan en `images`; quitarlas de una sección no borra el archivo físico.
 
 *Actualizado: 28 de octubre de 2026.*
+
+## Logo de la editorial en el pie de página
+
+En **«PIE DE PÁGINA — LOGO DE LA EDITORIAL Y TEXTOS»** usa el campo **«LOGO CUADRADO DE LA EDITORIAL — elegir, subir o quitar»** para subir un PNG, JPG o WebP, o seleccionar una imagen existente. Se recomienda un archivo cuadrado (por ejemplo 500 × 500 píxeles) y PNG transparente si el logo lo requiere. La web muestra el logo dentro de un cuadrado sin cortarlo. Si no seleccionas ningún archivo, no aparece el espacio reservado. Puedes introducir el nombre de la editorial para describir el logotipo de forma accesible.
