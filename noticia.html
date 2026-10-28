@@ -30,7 +30,7 @@
     const id=new URLSearchParams(location.search).get('id');
     const n=(data.noticias||[]).find(item=>(item.id||item.fecha)===id&&item.publicar!==false);
     root.replaceChildren();
-    if(!n){root.textContent='Noticia no encontrada.';return;}
+    if(!n){root.textContent=copy.noticia_no_encontrada??'Noticia no encontrada.';return;}
     document.title=(n.titulo||'Noticia')+' — Horizonte Temporal';
     function add(tag,value,cls=''){
       if(value===undefined||value===null||!String(value).trim())return null;
@@ -48,7 +48,7 @@
     add('p',n.contenido||n.texto);
     if(n.relacionado){
       const details=document.createElement('details');
-      const summary=document.createElement('summary');summary.textContent='Información relacionada';
+      const summary=document.createElement('summary');summary.textContent=copy.noticia_info_relacionada??'Información relacionada';
       const p=document.createElement('p');p.textContent=n.relacionado;details.append(summary,p);root.append(details);
     }
     if(/^https:\/\//i.test(n.enlace||'')){
