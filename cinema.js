@@ -83,7 +83,11 @@
     return /^(?!\.)(?!.*\.\.)[^\/\\<>:"|?*]+\.(?:jpe?g|png|webp|gif)$/i.test(filename) ? 'images/' + filename : '';
   }
   function updateImage(src) {
-    if (!src) return;
+    if (!src) {
+      ++imageRequest;
+      visualLayers.forEach(layer => { layer.classList.remove('is-visible'); layer.removeAttribute('src'); });
+      return;
+    }
     const request = ++imageRequest;
     const nextLayer = 1 - currentLayer;
     const incoming = visualLayers[nextLayer];
@@ -145,7 +149,7 @@
 
   function readEntries() {
     return Array.from(grid.querySelectorAll(':scope > .chapter')).map(card => ({
-      title: card.querySelector('h3')?.textContent?.trim() || 'Capítulo sin título',
+      title: card.querySelector('h3')?.textContent?.trim() || '',
       text: card.querySelector('p')?.textContent?.trim() || '',
       image: card.querySelector('img')?.getAttribute('src') || ''
     }));
@@ -167,7 +171,9 @@
     counter.textContent = `${num(active + 1)} — ${num(entries.length)}`;
     eyebrow.textContent = `CAPÍTULO ${num(active + 1)} / ${num(entries.length)}`;
     title.textContent = entry.title;
+    title.hidden = !entry.title;
     synopsis.textContent = entry.text;
+    synopsis.hidden = !entry.text;
     previous.disabled = active === 0;
     next.disabled = active === entries.length - 1;
     progress.style.width = `${((active + 1) / entries.length) * 100}%`;
@@ -206,7 +212,8 @@
       button.className = 'cinema-step';
       button.setAttribute('aria-label', `Ir al capítulo ${index + 1}: ${entry.title}`);
       const thumbnail = document.createElement('img');
-      thumbnail.src = entry.image;
+      if (entry.image) thumbnail.src = entry.image;
+      else thumbnail.hidden = true;
       thumbnail.alt = '';
       thumbnail.loading = 'lazy';
       const labels = document.createElement('span');
