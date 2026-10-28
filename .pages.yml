@@ -55,6 +55,9 @@ content:
       - name: imagen_cierre
         label: Cierre - imagen de fondo
         type: image
+      - name: logo_cierre
+        label: Cierre - logo (puede ser distinto del logo de portada)
+        type: image
       - name: proceso_1
         label: Detrás de las imágenes - texto principal
         type: text
