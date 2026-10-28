@@ -3,99 +3,24 @@ media:
   output: /images
 content:
   - name: sitio
-    label: Contenidos de Horizonte Temporal
+    label: "EDITAR HORIZONTE TEMPORAL — secciones en orden de la web"
     type: file
     path: contenido.json
     format: json
     fields:
-      - name: cita_destacada
-        label: "CITA DESTACADA — imagen de fondo y textos"
+      - name: encabezado
+        label: "ENCABEZADO Y NAVEGACIÓN"
         type: object
-        description: "Edita la imagen que aparece detrás de la cita sobre la materia. Selecciona una imagen existente, sube otra o vacía el campo para quitarla."
-        fields:
-          - name: imagen
-            label: "IMAGEN DE LA CITA — cambiar, subir o quitar"
-            type: image
-            description: "Se encuentra en la franja con la cita «La materia había agotado sus combinaciones». Usa la biblioteca de imágenes o sube una nueva."
-            options:
-              extensions: [jpg, jpeg, png, webp, gif, avif]
-          - name: rotulo
-            label: "Texto superior de la cita"
-            type: string
-          - name: texto
-            label: "Texto principal de la cita"
-            type: text
-          - name: credito
-            label: "Texto inferior de la cita"
-            type: string
-      - name: logo_portada
-        label: Logo de portada (opcional)
-        type: image
-      - name: imagen_portada
-        label: Portada - imagen de fondo (opcional)
-        type: image
-      - name: video_portada
-        label: URL o ruta del video MP4 de portada
-        type: string
-      - name: video_poster
-        label: Portada - imagen de respaldo del video
-        type: image
-      - name: galeria_ayuda
-        label: Texto de ayuda de la galería
-        type: text
-      - name: contacto_texto
-        label: Contacto - presentación
-        type: text
-      - name: contacto_email
-        label: Correo de contacto
-        type: string
-      - name: redes_sociales
-        label: Redes sociales
-        type: object
-        list: true
-        fields:
-          - name: nombre
-            label: Red social
-            type: string
-          - name: url
-            label: URL
-            type: string
-      - name: presentacion
-        label: Frase de portada
-        type: text
-      - name: historia_1
-        label: Historia - párrafo 1
-        type: text
-      - name: imagen_historia
-        label: Historia - imagen principal
-        type: image
-      - name: imagen_cierre
-        label: Cierre - imagen de fondo
-        type: image
-      - name: logo_cierre
-        label: Cierre - logo (puede ser distinto del logo de portada)
-        type: image
-      - name: proceso_1
-        label: Detrás de las imágenes - texto principal
-        type: text
-      - name: video_proceso
-        label: Detrás de las imágenes - video (URL de YouTube, Vimeo o MP4/WebM)
-        type: string
-      - name: video_poster_proceso
-        label: Detrás de las imágenes - imagen de portada del video (para MP4/WebM)
-        type: image
-      - name: textos
-        label: Textos y rótulos de todas las secciones (vacío = ocultar)
-        type: object
+        description: "Barra superior, enlaces del menú y descripción del sitio."
         fields:
           - name: descripcion_seo
-            label: "Descripción para buscadores"
+            label: "Descripción de la web para buscadores"
             type: text
           - name: marca_cabecera
-            label: "Nombre en encabezado"
+            label: "Nombre en la barra superior"
             type: string
           - name: menu
-            label: "Botón de menú"
+            label: "Botón del menú"
             type: string
           - name: nav_historia
             label: "Menú: Historia"
@@ -115,216 +40,334 @@ content:
           - name: nav_contacto
             label: "Menú: Contacto"
             type: string
-          - name: hero_titulo
-            label: "Portada: título alternativo (sin logo)"
+      - name: portada
+        label: "PORTADA / INICIO"
+        type: object
+        description: "Video silencioso y automático, imagen de fondo, logotipo y texto de presentación."
+        fields:
+          - name: logo_portada
+            label: "Logo de la portada"
+            type: image
+          - name: imagen_portada
+            label: "Imagen de fondo (si no hay video)"
+            type: image
+          - name: video_portada
+            label: "Video de inicio (YouTube o MP4/WebM)"
             type: string
+          - name: video_poster
+            label: "Imagen de respaldo del video"
+            type: image
+          - name: hero_titulo
+            label: "Título alternativo (sin logo)"
+            type: string
+          - name: presentacion
+            label: "Texto de presentación"
+            type: text
           - name: hero_pie_izq
-            label: "Portada: pie izquierdo"
+            label: "Pie izquierdo"
             type: string
           - name: hero_pie_der
-            label: "Portada: pie derecho"
+            label: "Pie derecho"
             type: string
+      - name: historia
+        label: "01 / LA HISTORIA"
+        type: object
+        description: "Texto, título e imagen grande de la historia."
+        fields:
           - name: historia_indice
-            label: "Historia: rótulo"
+            label: "Número y rótulo (01 / LA HISTORIA)"
             type: string
           - name: historia_genero
-            label: "Historia: género"
+            label: "Subtítulo o género"
             type: string
           - name: historia_entrada
-            label: "Historia: introducción breve"
+            label: "Frase inicial pequeña"
             type: string
           - name: historia_titulo
-            label: "Historia: título"
+            label: "Título grande"
             type: string
+          - name: historia_1
+            label: "Relato principal"
+            type: text
+          - name: imagen_historia
+            label: "Imagen grande de Historia"
+            type: image
           - name: historia_pie
-            label: "Historia: pie de imagen"
+            label: "Pie de la imagen"
             type: string
+      - name: cita_destacada
+        label: "CITA DESTACADA / IMAGEN Y TEXTO"
+        type: object
+        description: "Franja situada entre La historia y Archivo visual. Despliega este bloque para cambiar la imagen de la cita."
+        fields:
+          - name: imagen
+            label: "CAMBIAR IMAGEN DE FONDO DE LA CITA"
+            type: image
+            description: "Selecciona otra imagen o sube una nueva. Vacío = ocultar imagen."
+          - name: rotulo
+            label: "Rótulo superior de la cita"
+            type: string
+          - name: texto
+            label: "Texto principal de la cita"
+            type: text
+          - name: credito
+            label: "Texto inferior de la cita"
+            type: string
+      - name: galeria_seccion
+        label: "04 / ARCHIVO VISUAL — ENCABEZADO"
+        type: object
+        description: "Título, subtítulo e instrucciones de la galería."
+        fields:
           - name: galeria_indice
-            label: "Galería: rótulo"
+            label: "Número y rótulo (04 / ARCHIVO VISUAL)"
             type: string
           - name: galeria_subtitulo
-            label: "Galería: subtítulo"
+            label: "Subtítulo de la sección"
             type: string
           - name: galeria_titulo
-            label: "Galería: título"
+            label: "Título grande"
             type: string
+          - name: galeria_ayuda
+            label: "Texto de ayuda"
+            type: text
+          - name: capitulo_etiqueta
+            label: "Palabra CAPÍTULO en la galería"
+            type: string
+      - name: capitulos
+        label: "ARCHIVO VISUAL — SIETE CAPÍTULOS Y TRES IMÁGENES CADA UNO"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{titulo}"
+        fields:
+          - name: titulo
+            label: "Título del capítulo"
+            type: string
+          - name: galeria
+            label: "Imágenes del capítulo (máximo tres)"
+            type: object
+            list:
+              max: 3
+              collapsible:
+                collapsed: true
+                summary: "{pie}"
+            fields:
+              - name: imagen
+                label: "Elegir, cambiar o quitar la imagen"
+                type: image
+              - name: pie
+                label: "Pie de imagen (opcional)"
+                type: string
+      - name: proceso
+        label: "05 / DETRÁS DE LAS IMÁGENES"
+        type: object
+        description: "Texto y video silencioso de reproducción automática."
+        fields:
           - name: proceso_indice
-            label: "Proceso: rótulo"
+            label: "Número y rótulo"
             type: string
           - name: proceso_subtitulo
-            label: "Proceso: subtítulo"
+            label: "Subtítulo"
             type: string
           - name: proceso_entrada
-            label: "Proceso: entradilla"
+            label: "Frase pequeña"
             type: string
           - name: proceso_titulo
-            label: "Proceso: título"
+            label: "Título grande"
             type: string
+          - name: proceso_1
+            label: "Texto sobre el proceso creativo"
+            type: text
+          - name: video_proceso
+            label: "URL del video (YouTube, Vimeo o MP4/WebM)"
+            type: string
+          - name: video_poster_proceso
+            label: "Imagen de respaldo del video"
+            type: image
           - name: proceso_video_pie
-            label: "Proceso: pie del video"
+            label: "Pie del video"
             type: string
+      - name: novedades_seccion
+        label: "06 / BITÁCORA — ENCABEZADO"
+        type: object
+        description: "Títulos, rótulos y etiquetas de las noticias."
+        fields:
           - name: noticias_indice
-            label: "Novedades: rótulo"
+            label: "Número y rótulo"
             type: string
           - name: noticias_subtitulo
-            label: "Novedades: subtítulo"
+            label: "Subtítulo"
             type: string
           - name: noticias_titulo
-            label: "Novedades: título"
+            label: "Título grande"
             type: string
           - name: noticias_intro
-            label: "Novedades: introducción"
+            label: "Introducción a noticias"
             type: text
           - name: noticia_leer
-            label: "Novedades: texto de enlace"
+            label: "Texto del enlace para leer noticia"
             type: string
           - name: noticias_vacio
-            label: "Novedades: mensaje sin noticias"
-            type: string
-          - name: compra_indice
-            label: "Compra: rótulo"
-            type: string
-          - name: compra_subtitulo
-            label: "Compra: subtítulo"
-            type: string
-          - name: compra_entrada
-            label: "Compra: entradilla"
-            type: string
-          - name: contacto_indice
-            label: "Contacto: rótulo"
-            type: string
-          - name: contacto_subtitulo
-            label: "Contacto: subtítulo"
-            type: string
-          - name: contacto_titulo
-            label: "Contacto: título"
-            type: string
-          - name: contacto_boton
-            label: "Contacto: botón"
-            type: string
-          - name: cierre_rotulo
-            label: "Cierre: rótulo"
-            type: string
-          - name: cierre_titulo
-            label: "Cierre: título alternativo (sin logo)"
-            type: string
-          - name: cierre_pie
-            label: "Cierre: texto"
-            type: string
-          - name: cierre_boton
-            label: "Cierre: botón"
-            type: string
-          - name: footer_marca
-            label: "Pie: nombre"
-            type: string
-          - name: footer_descripcion
-            label: "Pie: descripción"
-            type: string
-          - name: footer_credito
-            label: "Pie: crédito"
-            type: string
+            label: "Mensaje cuando no hay noticias"
+            type: text
           - name: noticias_volver
             label: "Página de noticia: volver"
             type: string
-          - name: capitulo_etiqueta
-            label: "Etiqueta para capítulos"
-            type: string
           - name: noticia_info_relacionada
-            label: "Noticia - información relacionada"
+            label: "Página de noticia: texto información relacionada"
             type: string
           - name: noticia_no_encontrada
-            label: "Noticia - no encontrada"
+            label: "Página de noticia: texto no encontrada"
             type: string
-          - name: noticia_error
-            label: "Noticia - error de carga"
-            type: string
-      - name: capitulos
-        label: Siete capítulos
-        type: object
-        list: true
-        fields:
-          - name: titulo
-            label: Título
-            type: string
-          - name: imagen
-            label: Capítulo - imagen protagonista
-            type: image
-          - name: texto
-            label: Sinopsis
-            type: text
-          - name: galeria
-            label: Galería de este capítulo (3 imágenes, puedes quitar cualquiera)
-            type: object
-            list: true
-            fields:
-              - name: imagen
-                label: Imagen de la galería
-                type: image
-              - name: pie
-                label: Pie de foto (opcional)
-                type: string
       - name: noticias
-        label: Noticias y novedades
+        label: "BITÁCORA — NOTICIAS PUBLICADAS O EN BORRADOR"
         type: object
-        list: true
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{titulo}"
         fields:
           - name: id
-            label: Identificador único (sin espacios)
+            label: "Identificador único"
             type: string
           - name: fecha
-            label: Fecha (AAAA-MM-DD)
+            label: "Fecha (AAAA-MM-DD)"
             type: string
           - name: titulo
-            label: Título
+            label: "Nombre de la publicación"
             type: string
           - name: texto
-            label: Texto de la noticia
+            label: "Texto de la cita"
             type: text
           - name: imagen
-            label: Imagen de la noticia (opcional)
+            label: "Imagen de la edición"
             type: image
           - name: contenido
-            label: Noticia completa
+            label: "Noticia completa"
             type: text
           - name: relacionado
-            label: Información relacionada desplegable
+            label: "Información relacionada opcional"
             type: text
           - name: enlace
-            label: URL opcional
+            label: "URL externa opcional"
             type: string
           - name: texto_enlace
-            label: Texto del enlace
+            label: "Texto del enlace externo"
             type: string
           - name: publicar
-            label: Publicar noticia
+            label: "Mostrar esta noticia"
             type: boolean
       - name: compra
-        label: Dónde comprar
+        label: "07 / EDICIÓN IMPRESA Y DÓNDE COMPRAR"
         type: object
         fields:
+          - name: compra_indice
+            label: "Número y rótulo"
+            type: string
+          - name: compra_subtitulo
+            label: "Subtítulo"
+            type: string
+          - name: compra_entrada
+            label: "Frase pequeña"
+            type: string
           - name: titulo
-            label: Título
+            label: "Nombre de la publicación"
             type: string
           - name: descripcion
-            label: Descripción
+            label: "Descripción de la edición"
             type: text
           - name: precio
-            label: Precio
+            label: "Precio (opcional)"
             type: string
           - name: estado
-            label: Estado (próximamente, disponible...)
+            label: "Estado de la publicación"
             type: string
           - name: imagen
-            label: Imagen de la edición impresa (opcional)
+            label: "Imagen de la edición"
             type: image
           - name: enlaces
-            label: Tiendas y puntos de venta
+            label: "Tiendas y puntos de venta"
             type: object
-            list: true
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{nombre}"
             fields:
               - name: nombre
-                label: Nombre de la tienda
+                label: "Nombre del punto de venta"
                 type: string
               - name: url
-                label: Enlace de compra
+                label: "Enlace a tienda"
                 type: string
+      - name: contacto
+        label: "08 / CONTACTO Y REDES SOCIALES"
+        type: object
+        fields:
+          - name: contacto_indice
+            label: "Número y rótulo"
+            type: string
+          - name: contacto_subtitulo
+            label: "Subtítulo"
+            type: string
+          - name: contacto_titulo
+            label: "Título grande"
+            type: string
+          - name: contacto_texto
+            label: "Presentación de contacto"
+            type: text
+          - name: contacto_email
+            label: "Correo electrónico"
+            type: string
+          - name: contacto_boton
+            label: "Texto del botón para escribir"
+            type: string
+          - name: redes_sociales
+            label: "Enlaces a redes sociales"
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{nombre}"
+            fields:
+              - name: nombre
+                label: "Red social"
+                type: string
+              - name: url
+                label: "Enlace de la red social"
+                type: string
+      - name: cierre
+        label: "CIERRE DE LA PÁGINA"
+        type: object
+        fields:
+          - name: imagen_cierre
+            label: "Imagen de fondo del cierre"
+            type: image
+          - name: logo_cierre
+            label: "Logo del cierre (opcional)"
+            type: image
+          - name: cierre_rotulo
+            label: "Frase pequeña"
+            type: string
+          - name: cierre_titulo
+            label: "Título alternativo si no hay logo"
+            type: string
+          - name: cierre_pie
+            label: "Texto final"
+            type: string
+          - name: cierre_boton
+            label: "Botón para volver al inicio"
+            type: string
+      - name: pie
+        label: "PIE DE PÁGINA"
+        type: object
+        fields:
+          - name: footer_marca
+            label: "Nombre en pie de página"
+            type: string
+          - name: footer_descripcion
+            label: "Descripción breve"
+            type: string
+          - name: footer_credito
+            label: "Crédito del pie"
+            type: string
