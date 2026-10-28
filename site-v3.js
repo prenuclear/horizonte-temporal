@@ -156,9 +156,24 @@ function nav(){
  b.onclick=()=>{const active=n.classList.toggle('open');b.setAttribute('aria-expanded',String(active));};
  $$('a',n).forEach(a=>a.onclick=()=>{n.classList.remove('open');b.setAttribute('aria-expanded','false');});
 }
+function organizeContent(raw){
+ const data={...raw,textos:{...(raw.textos||{})}};
+ const copyKeys=new Set([...$('[data-copy]').map(x=>x.dataset.copy),
+  'descripcion_seo','noticia_leer','noticias_vacio','noticias_volver',
+  'noticia_info_relacionada','noticia_no_encontrada','capitulo_etiqueta']);
+ for(const group of ['encabezado','portada','historia','galeria_seccion','proceso','novedades_seccion','compra','contacto','cierre','pie']){
+  const fields=raw[group];
+  if(!fields||typeof fields!=='object'||Array.isArray(fields))continue;
+  for(const [key,value] of Object.entries(fields)){
+   if(copyKeys.has(key))data.textos[key]=value;
+   else data[key]=value;
+  }
+ }
+ return data;
+}
 async function init(){
  nav();
- try{const r=await fetch('contenido.json',{cache:'no-store'});if(!r.ok)throw Error('Contenido no disponible');const data=await r.json();
+ try{const r=await fetch('contenido.json',{cache:'no-store'});if(!r.ok)throw Error('Contenido no disponible');const data=organizeContent(await r.json());
   copy(data);gallery(data);news(data);buy(data);media(data);contact(data);
  }catch(error){console.warn('Error cargando contenido.json en Horizonte Temporal',error);}
 }
