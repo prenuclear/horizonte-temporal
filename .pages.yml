@@ -67,23 +67,6 @@ content:
       - name: video_poster_proceso
         label: Detrás de las imágenes - imagen de portada del video (para MP4/WebM)
         type: image
-      - name: atlas
-        label: Atlas - fichas e imágenes (puedes agregar, quitar o cambiar)
-        type: object
-        list: true
-        fields:
-          - name: imagen
-            label: Imagen (opcional)
-            type: image
-          - name: etiqueta
-            label: Categoría o rótulo
-            type: string
-          - name: titulo
-            label: Título
-            type: string
-          - name: texto
-            label: Descripción
-            type: text
       - name: textos
         label: Textos y rótulos de todas las secciones (vacío = ocultar)
         type: object
@@ -99,9 +82,6 @@ content:
             type: string
           - name: nav_historia
             label: "Menú: Historia"
-            type: string
-          - name: nav_universo
-            label: "Menú: Universo"
             type: string
           - name: nav_galeria
             label: "Menú: Galería"
@@ -150,15 +130,6 @@ content:
             type: text
           - name: cita_credito
             label: "Cita: crédito"
-            type: string
-          - name: atlas_indice
-            label: "Atlas: rótulo"
-            type: string
-          - name: atlas_subtitulo
-            label: "Atlas: subtítulo"
-            type: string
-          - name: atlas_titulo
-            label: "Atlas: título"
             type: string
           - name: galeria_indice
             label: "Galería: rótulo"
