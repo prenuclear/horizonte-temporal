@@ -9,14 +9,17 @@ content:
     format: json
     fields:
       - name: logo_portada
-        label: Logo de portada (PNG transparente; archivo de images o URL)
-        type: string
+        label: Logo de portada (opcional)
+        type: image
+      - name: imagen_portada
+        label: Portada - imagen de fondo (opcional)
+        type: image
       - name: video_portada
         label: URL o ruta del video MP4 de portada
         type: string
       - name: video_poster
-        label: Imagen de respaldo del video
-        type: string
+        label: Portada - imagen de respaldo del video
+        type: image
       - name: galeria_ayuda
         label: Texto de ayuda de la galería
         type: text
@@ -44,7 +47,13 @@ content:
         label: Historia - párrafo 1
         type: text
       - name: imagen_historia
-        label: Historia - imagen principal (elige o sube una imagen)
+        label: Historia - imagen principal
+        type: image
+      - name: imagen_cita
+        label: Fragmento - imagen de fondo
+        type: image
+      - name: imagen_cierre
+        label: Cierre - imagen de fondo
         type: image
       - name: proceso_1
         label: Detrás de las imágenes - texto principal
@@ -55,6 +64,201 @@ content:
       - name: video_poster_proceso
         label: Detrás de las imágenes - imagen de portada del video (para MP4/WebM)
         type: image
+      - name: atlas
+        label: Atlas - fichas e imágenes (puedes agregar, quitar o cambiar)
+        type: object
+        list: true
+        fields:
+          - name: imagen
+            label: Imagen (opcional)
+            type: image
+          - name: etiqueta
+            label: Categoría o rótulo
+            type: string
+          - name: titulo
+            label: Título
+            type: string
+          - name: texto
+            label: Descripción
+            type: text
+      - name: textos
+        label: Textos y rótulos de todas las secciones (vacío = ocultar)
+        type: object
+        fields:
+          - name: descripcion_seo
+            label: "Descripción para buscadores"
+            type: text
+          - name: marca_cabecera
+            label: "Nombre en encabezado"
+            type: string
+          - name: menu
+            label: "Botón de menú"
+            type: string
+          - name: nav_historia
+            label: "Menú: Historia"
+            type: string
+          - name: nav_capitulos
+            label: "Menú: Capítulos"
+            type: string
+          - name: nav_universo
+            label: "Menú: Universo"
+            type: string
+          - name: nav_galeria
+            label: "Menú: Galería"
+            type: string
+          - name: nav_proceso
+            label: "Menú: Proceso"
+            type: string
+          - name: nav_novedades
+            label: "Menú: Novedades"
+            type: string
+          - name: nav_comprar
+            label: "Menú: Dónde comprar"
+            type: string
+          - name: nav_contacto
+            label: "Menú: Contacto"
+            type: string
+          - name: hero_titulo
+            label: "Portada: título alternativo (sin logo)"
+            type: string
+          - name: hero_pie_izq
+            label: "Portada: pie izquierdo"
+            type: string
+          - name: hero_pie_der
+            label: "Portada: pie derecho"
+            type: string
+          - name: historia_indice
+            label: "Historia: rótulo"
+            type: string
+          - name: historia_genero
+            label: "Historia: género"
+            type: string
+          - name: historia_entrada
+            label: "Historia: introducción breve"
+            type: string
+          - name: historia_titulo
+            label: "Historia: título"
+            type: string
+          - name: historia_pie
+            label: "Historia: pie de imagen"
+            type: string
+          - name: capitulos_indice
+            label: "Capítulos: rótulo"
+            type: string
+          - name: capitulos_subtitulo
+            label: "Capítulos: subtítulo"
+            type: string
+          - name: capitulos_titulo
+            label: "Capítulos: título"
+            type: string
+          - name: capitulos_ayuda
+            label: "Capítulos: texto introductorio"
+            type: text
+          - name: cita_rotulo
+            label: "Cita: rótulo"
+            type: string
+          - name: cita_texto
+            label: "Cita: texto"
+            type: text
+          - name: cita_credito
+            label: "Cita: crédito"
+            type: string
+          - name: atlas_indice
+            label: "Atlas: rótulo"
+            type: string
+          - name: atlas_subtitulo
+            label: "Atlas: subtítulo"
+            type: string
+          - name: atlas_titulo
+            label: "Atlas: título"
+            type: string
+          - name: galeria_indice
+            label: "Galería: rótulo"
+            type: string
+          - name: galeria_subtitulo
+            label: "Galería: subtítulo"
+            type: string
+          - name: galeria_titulo
+            label: "Galería: título"
+            type: string
+          - name: proceso_indice
+            label: "Proceso: rótulo"
+            type: string
+          - name: proceso_subtitulo
+            label: "Proceso: subtítulo"
+            type: string
+          - name: proceso_entrada
+            label: "Proceso: entradilla"
+            type: string
+          - name: proceso_titulo
+            label: "Proceso: título"
+            type: string
+          - name: proceso_video_pie
+            label: "Proceso: pie del video"
+            type: string
+          - name: noticias_indice
+            label: "Novedades: rótulo"
+            type: string
+          - name: noticias_subtitulo
+            label: "Novedades: subtítulo"
+            type: string
+          - name: noticias_titulo
+            label: "Novedades: título"
+            type: string
+          - name: noticias_intro
+            label: "Novedades: introducción"
+            type: text
+          - name: noticia_leer
+            label: "Novedades: texto de enlace"
+            type: string
+          - name: noticias_vacio
+            label: "Novedades: mensaje sin noticias"
+            type: string
+          - name: compra_indice
+            label: "Compra: rótulo"
+            type: string
+          - name: compra_subtitulo
+            label: "Compra: subtítulo"
+            type: string
+          - name: compra_entrada
+            label: "Compra: entradilla"
+            type: string
+          - name: contacto_indice
+            label: "Contacto: rótulo"
+            type: string
+          - name: contacto_subtitulo
+            label: "Contacto: subtítulo"
+            type: string
+          - name: contacto_titulo
+            label: "Contacto: título"
+            type: string
+          - name: contacto_boton
+            label: "Contacto: botón"
+            type: string
+          - name: cierre_rotulo
+            label: "Cierre: rótulo"
+            type: string
+          - name: cierre_titulo
+            label: "Cierre: título alternativo (sin logo)"
+            type: string
+          - name: cierre_pie
+            label: "Cierre: texto"
+            type: string
+          - name: cierre_boton
+            label: "Cierre: botón"
+            type: string
+          - name: footer_marca
+            label: "Pie: nombre"
+            type: string
+          - name: footer_descripcion
+            label: "Pie: descripción"
+            type: string
+          - name: footer_credito
+            label: "Pie: crédito"
+            type: string
+          - name: noticias_volver
+            label: "Página de noticia: volver"
+            type: string
       - name: capitulos
         label: Siete capítulos
         type: object
@@ -64,8 +268,8 @@ content:
             label: Título
             type: string
           - name: imagen
-            label: Nombre de imagen (archivo en images)
-            type: string
+            label: Capítulo - imagen protagonista
+            type: image
           - name: texto
             label: Sinopsis
             type: text
@@ -83,20 +287,17 @@ content:
               - name: texto
                 label: Texto breve que aparece en la escena
                 type: text
-      - name: galeria
-        label: Galería
-        type: object
-        list: true
-        fields:
-          - name: imagen
-            label: Nombre de imagen
-            type: string
-          - name: titulo
-            label: Descripción
-            type: string
-          - name: categoria
-            label: Categoría (cosmos, tierra, criaturas)
-            type: string
+          - name: galeria
+            label: Galería de este capítulo (3 imágenes, puedes quitar cualquiera)
+            type: object
+            list: true
+            fields:
+              - name: imagen
+                label: Imagen de la galería
+                type: image
+              - name: pie
+                label: Pie de foto (opcional)
+                type: string
       - name: noticias
         label: Noticias y novedades
         type: object
@@ -115,8 +316,8 @@ content:
             label: Texto de la noticia
             type: text
           - name: imagen
-            label: Nombre de imagen
-            type: string
+            label: Imagen de la noticia (opcional)
+            type: image
           - name: contenido
             label: Noticia completa
             type: text
@@ -149,8 +350,8 @@ content:
             label: Estado (próximamente, disponible...)
             type: string
           - name: imagen
-            label: Nombre de imagen
-            type: string
+            label: Imagen de la edición impresa (opcional)
+            type: image
           - name: enlaces
             label: Tiendas y puntos de venta
             type: object
