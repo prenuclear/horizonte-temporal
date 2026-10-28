@@ -262,6 +262,45 @@ content:
           - name: noticias_volver
             label: "Página de noticia: volver"
             type: string
+          - name: capitulo_etiqueta
+            label: "Etiqueta para capítulos"
+            type: string
+          - name: cine_firma
+            label: "Explorador - encabezado"
+            type: string
+          - name: cine_anterior
+            label: "Explorador - botón anterior"
+            type: string
+          - name: cine_siguiente
+            label: "Explorador - botón siguiente"
+            type: string
+          - name: cine_ayuda
+            label: "Explorador - instrucciones"
+            type: string
+          - name: cine_inicio
+            label: "Explorador - inicio"
+            type: string
+          - name: cine_fin
+            label: "Explorador - final"
+            type: string
+          - name: cine_escenas
+            label: "Explorador - secuencia"
+            type: string
+          - name: cine_reproducir
+            label: "Explorador - botón de reproducción"
+            type: string
+          - name: cine_pausar
+            label: "Explorador - botón de pausa"
+            type: string
+          - name: noticia_info_relacionada
+            label: "Noticia - información relacionada"
+            type: string
+          - name: noticia_no_encontrada
+            label: "Noticia - no encontrada"
+            type: string
+          - name: noticia_error
+            label: "Noticia - error de carga"
+            type: string
       - name: capitulos
         label: Siete capítulos
         type: object
