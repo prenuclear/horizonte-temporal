@@ -227,15 +227,13 @@
   },
   "cierre": {
     "imagen_cierre": "/images/1000057945.jpg",
-    "logo_cierre": "",
     "cierre_rotulo": "EL VIAJE CONTINÚA",
     "cierre_titulo": "HORIZONTE [TEMPORAL]",
     "cierre_pie": "HORIZONTE TEMPORAL · UNIVERSO VISUAL EN DESARROLLO",
     "cierre_boton": "VOLVER AL INICIO ↑"
   },
   "pie": {
-    "logo_editorial": "",
-    "nombre_editorial": "",
+    "logo_editorial": "/images/logo_conjuntivitis__1.png",
     "footer_marca": "HORIZONTE TEMPORAL",
     "footer_descripcion": "Una novela gráfica en construcción.",
     "footer_credito": "HORIZONTE TEMPORAL · 2026"
