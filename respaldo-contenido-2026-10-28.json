@@ -1,0 +1,246 @@
+{
+  "logo_portada": "/images/horizonte temporal-3_.png",
+  "imagen_portada": "/images/casa1.jpg",
+  "video_portada": "https://www.youtube.com/watch?v=nTtJQ5hLjwA",
+  "video_poster": "/images/casa1.jpg",
+  "galeria_ayuda": "Selecciona una imagen para verla ampliada. Cada capítulo reúne tres fragmentos visuales.",
+  "contacto_texto": "Para consultas, colaboraciones o información sobre la novela gráfica, puedes contactar al autor.",
+  "contacto_email": "prenuclear@gmail.com",
+  "redes_sociales": [
+    {
+      "nombre": "Instagram",
+      "url": "https://www.instagram.com/prenuclear/"
+    }
+  ],
+  "presentacion": "Horizonte Temporal es una novela gráfica de ciencia ficción que explora distintos mundos y tiempos a través de sus personajes, criaturas y escenarios. En este sitio podrás conocer la historia, descubrir sus ilustraciones y seguir los avances del proyecto.",
+  "historia_1": "A través de distintas versiones de un personaje llamado el Príncipe, la historia reconstruye las transformaciones de la Tierra: un planeta donde la caída de una misteriosa ceniza, proveniente de civilizaciones extinguidas, altera el curso de la evolución de las especies.\n\nEsta materia, que conserva los rastros de innumerables formas de vida, abre nuevas posibilidades biológicas y desencadena acontecimientos que desafían las leyes del tiempo y de la conciencia. Entre viajes espaciales, criaturas desconocidas y mundos que comienzan a superponerse, la humanidad descubre que quizá no sea el origen de la vida, sino su último intento por sobrevivir a la extinción del universo.",
+  "imagen_historia": "/images/22-1.jpg",
+  "imagen_cierre": "/images/1000057945.jpg",
+  "proceso_1": "El universo visual de Horizonte Temporal se ha construido a lo largo de unos quince años, a partir de ilustraciones que originalmente surgieron de manera independiente y que, con el tiempo, comenzaron a formar parte de un mismo proyecto. Su desarrollo combina dibujo, escultura manual, construcción de maquetas, modificación de figuras existentes, modelado e impresión 3D, fotografía y composición digital. \n\nA través de estos procedimientos, las imágenes han sido intervenidas y transformadas, incorporando nuevos elementos y estableciendo relaciones entre trabajos realizados en distintos momentos. Este proceso de experimentación, que transita constantemente entre lo físico y lo digital, ha permitido desarrollar los personajes, escenarios y situaciones que hoy conforman el universo narrativo de la novela gráfica.",
+  "video_proceso": "https://youtube.com/shorts/tzL-7vUZB8c",
+  "video_poster_proceso": "/images/1000057954.jpg",
+  "textos": {
+    "descripcion_seo": "Horizonte Temporal: novela gráfica de ciencia ficción, ruinas y transformación.",
+    "marca_cabecera": "HORIZONTE TEMPORAL",
+    "menu": "MENÚ ☰",
+    "nav_historia": "La historia",
+    "nav_galeria": "Galería",
+    "nav_proceso": "Proceso",
+    "nav_novedades": "Novedades",
+    "nav_comprar": "Dónde comprar",
+    "nav_contacto": "Contacto",
+    "hero_titulo": "HORIZONTE TEMPORAL",
+    "hero_pie_izq": "7 CAPÍTULOS / 21 IMÁGENES",
+    "hero_pie_der": "DESLIZA PARA DESCUBRIR ↓",
+    "historia_indice": "01 / LA HISTORIA",
+    "historia_genero": "CIENCIA FICCIÓN · FANTASÍA ONÍRICA",
+    "historia_entrada": "UN VIAJE HACIA EL FINAL DE LAS POSIBILIDADES",
+    "historia_titulo": "El cosmos guarda\nuna [última] transformación.",
+    "historia_pie": "EL MUNDO DESPUÉS DEL MUNDO",
+    "galeria_indice": "04 / ARCHIVO VISUAL",
+    "galeria_subtitulo": "7 CAPÍTULOS · 21 ESPACIOS VISUALES",
+    "galeria_titulo": "Fragmentos de [otros mundos.]",
+    "proceso_indice": "05 / DETRÁS DE LAS IMÁGENES",
+    "proceso_subtitulo": "PROCESO CREATIVO",
+    "proceso_entrada": "UNA OBRA EN TRANSFORMACIÓN",
+    "proceso_titulo": "Entre la maqueta,\nel dibujo y la [memoria.]",
+    "proceso_video_pie": "ARCHIVO AUDIOVISUAL · DETRÁS DE LAS IMÁGENES",
+    "noticias_indice": "06 / BITÁCORA",
+    "noticias_subtitulo": "ACTUALIZACIONES DEL PROYECTO",
+    "noticias_titulo": "Noticias y [novedades.]",
+    "noticias_intro": "Ilustraciones, avances, lanzamientos y encuentros en torno a Horizonte Temporal.",
+    "noticia_leer": "LEER NOTICIA COMPLETA",
+    "noticias_vacio": "Pronto compartiremos nuevas noticias del proyecto.",
+    "compra_indice": "07 / EDICIÓN IMPRESA",
+    "compra_subtitulo": "CONSIGUE EL CÓMIC",
+    "compra_entrada": "EDICIÓN IMPRESA",
+    "contacto_indice": "08 / CONTACTO",
+    "contacto_subtitulo": "CONVERSACIONES Y CONSULTAS",
+    "contacto_titulo": "Contactar al [autor.]",
+    "contacto_boton": "ESCRIBIR POR CORREO ↗",
+    "cierre_rotulo": "EL VIAJE CONTINÚA",
+    "cierre_titulo": "HORIZONTE [TEMPORAL]",
+    "cierre_pie": "HORIZONTE TEMPORAL · UNIVERSO VISUAL EN DESARROLLO",
+    "cierre_boton": "VOLVER AL INICIO ↑",
+    "footer_marca": "HORIZONTE TEMPORAL",
+    "footer_descripcion": "Una novela gráfica en construcción.",
+    "footer_credito": "HORIZONTE TEMPORAL · 2026",
+    "noticias_volver": "← VOLVER A NOTICIAS"
+  },
+  "capitulos": [
+    {
+      "titulo": "LA CENIZA DE LOS ANTIGUOS",
+      "imagen": "/images/1000057951.jpg",
+      "texto": "Mucho antes de la historia humana, una materia extraterrestre, posteriormente identificada por el Príncipe como ceniza de fondo, descendió lentamente sobre la Tierra. Al penetrar en los organismos, alteró sus procesos biológicos y dio origen a nuevas formas de vida. Estas transformaciones marcaron el surgimiento de los primeros impulsos de supervivencia y temor, incluso antes de que existiera una conciencia capaz de reconocerlos.",
+      "epigrafe": "Mucho antes de los registros humanos, algo comenzó a descender.",
+      "escenas": [
+        {
+          "imagen": "/images/1000057950.jpg",
+          "texto": "La ceniza de fondo alteró la materia viva sin obedecer a una voluntad reconocible."
+        },
+        {
+          "imagen": "/images/1000057955.jpg",
+          "texto": "Las nuevas formas aprendieron a sobrevivir antes de saber que podían desaparecer."
+        }
+      ],
+      "galeria": [
+        {
+          "imagen": "/images/1000057951.jpg",
+          "pie": "El viajero cósmico"
+        },
+        {
+          "imagen": "/images/1000057950.jpg",
+          "pie": "El mundo de ceniza"
+        },
+        {
+          "imagen": "/images/1000057955.jpg",
+          "pie": "Gigantes en la Tierra"
+        }
+      ]
+    },
+    {
+      "titulo": "CONFLICTO DE LA EXTINCIÓN EXTRATERRENA",
+      "imagen": "/images/1000057953.jpg",
+      "texto": "He visto morir mundos enteros. Al principio registraba sus pérdidas como parte de un proceso inevitable. Después comprendí que la vida no acepta fácilmente su desaparición. Cuando el cosmos comenzó a agotarse, sus últimas formas buscaron dónde continuar. Este relato comienza allí: en el momento en que la vida deja de huir de la extinción y comienza a perseguir nuevos mundos.",
+      "galeria": [
+        {
+          "imagen": "/images/1000057953.jpg",
+          "pie": "La partida"
+        },
+        {
+          "imagen": "/images/1000057951.jpg",
+          "pie": "El viajero cósmico"
+        },
+        {
+          "imagen": "/images/1000057945.jpg",
+          "pie": "La casa distante"
+        }
+      ]
+    },
+    {
+      "titulo": "REPOSICIONAMIENTO  DEL MUNDO INFIERNO",
+      "imagen": "/images/1000057956.jpg",
+      "texto": "El infierno no es un lugar, sino una presión.  Cuando las capas de la existencia se desplazan, lo que estaba sepultado intenta reconstruirse en el mundo físico. Es el nacimiento de un enemigo que no tiene rostro único.",
+      "galeria": [
+        {
+          "imagen": "/images/1000057956.jpg",
+          "pie": "Ciudad de los otros"
+        },
+        {
+          "imagen": "/images/1000057952.jpg",
+          "pie": "Mundo Infierno"
+        },
+        {
+          "imagen": "/images/1000057946.jpg",
+          "pie": "Criaturas del umbral"
+        }
+      ]
+    },
+    {
+      "titulo": "MOMENTO CONTEMPORÁNEO Registro de Deriva Humana",
+      "imagen": "/images/1000057954.jpg",
+      "texto": "Este corte reúne una selección de acontecimientos, experiencias y cambios del presente. Es un registro parcial de un momento contemporáneo en constante transformación.",
+      "galeria": [
+        {
+          "imagen": "/images/1000057954.jpg",
+          "pie": "Viaje por las ruinas"
+        },
+        {
+          "imagen": "/images/1000057953.jpg",
+          "pie": "La partida"
+        },
+        {
+          "imagen": "/images/1000057947.jpg",
+          "pie": "El visitante"
+        }
+      ]
+    },
+    {
+      "titulo": "APOCALIPSIS TERRESTRE Registro del Colapso ",
+      "imagen": "/images/1000057944.jpg",
+      "texto": "Este registro reúne fragmentos del deterioro progresivo de la vida en la Tierra. Documenta el colapso de las estructuras sociales, la transformación del entorno y los últimos intentos de la humanidad por adaptarse a un planeta que ha dejado de ofrecer las condiciones necesarias para su supervivencia.",
+      "galeria": [
+        {
+          "imagen": "/images/1000057944.jpg",
+          "pie": "El becerro de oro"
+        },
+        {
+          "imagen": "/images/1000057955.jpg",
+          "pie": "Gigantes en la Tierra"
+        },
+        {
+          "imagen": "/images/1000057950.jpg",
+          "pie": "El mundo de ceniza"
+        }
+      ]
+    },
+    {
+      "titulo": "UNIÓN DE MUNDO PARALELO  Y EL MUNDO HUMANO Registro de Superposición ",
+      "imagen": "/images/1000057949.jpg",
+      "texto": "Este registro documenta el proceso de superposición entre el mundo humano y una realidad paralela. A medida que sus límites desaparecen, ambos mundos comienzan a compartir espacios, organismos y formas de existencia, alterando las condiciones de vida en la Tierra y dando origen a una nueva realidad.",
+      "galeria": [
+        {
+          "imagen": "/images/1000057949.jpg",
+          "pie": "La mujer alada"
+        },
+        {
+          "imagen": "/images/1000057948.jpg",
+          "pie": "La ruina del ángel"
+        },
+        {
+          "imagen": "/images/1000057945.jpg",
+          "pie": "La casa distante"
+        }
+      ]
+    },
+    {
+      "titulo": "CRISIS DEL FUTURO CIBERPUNK El último Estado del  Devenir Humano",
+      "imagen": "/images/1000057952.jpg",
+      "texto": "Este registro presenta una etapa futura de la humanidad, marcada por la integración entre organismos y tecnologías, el control de los sistemas artificiales y la transformación de las estructuras sociales. En un entorno cada vez más deteriorado, la distinción entre lo humano y lo tecnológico comienza a desaparecer, dando paso a nuevas formas de existencia.",
+      "galeria": [
+        {
+          "imagen": "/images/1000057952.jpg",
+          "pie": "Mundo Infierno"
+        },
+        {
+          "imagen": "/images/1000057947.jpg",
+          "pie": "El visitante"
+        },
+        {
+          "imagen": "/images/1000057946.jpg",
+          "pie": "Criaturas del umbral"
+        }
+      ]
+    }
+  ],
+  "noticias": [
+    {
+      "id": "noticia-1",
+      "fecha": "2026-10-25",
+      "titulo": "Horizonte Temporal: un universo en construcción",
+      "texto": "Comienza el archivo web de la novela gráfica. Pronto compartiremos nuevas imágenes y avances del proceso creativo.",
+      "imagen": "/images/1000057950.jpg",
+      "contenido": "Comienza el archivo web de la novela gráfica. Pronto compartiremos nuevas imágenes y avances del proceso creativo.",
+      "publicar": true
+    },
+    {
+      "id": "noticia-2",
+      "fecha": "prueba de noticia...primer lanzamineto de revista 1 de 4",
+      "texto": "muy pronto el primer lanzamiento en formato fisico...",
+      "contenido": "muy pronto el primer lanzamiento en formato fisico...",
+      "publicar": true
+    }
+  ],
+  "compra": {
+    "titulo": "Horizonte Temporal",
+    "descripcion": "La edición impresa está en preparación. Aquí anunciaremos el lanzamiento y los lugares donde conseguirla.",
+    "estado": "PRÓXIMAMENTE",
+    "imagen": "/images/1000057951.jpg"
+  },
+  "cita_destacada": {
+    "imagen": "/images/1000057950.jpg",
+    "rotulo": "FRAGMENTO / ARCHIVO DEL COSMOS",
+    "texto": "«La materia había agotado sus combinaciones. Lo que llegó después no era muerte: era otra manera de existir».",
+    "credito": "FRAGMENTO NARRATIVO PROVISIONAL"
+  }
+}
