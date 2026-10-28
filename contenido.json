@@ -98,7 +98,20 @@
     "footer_marca": "HORIZONTE TEMPORAL",
     "footer_descripcion": "Una novela gráfica en construcción.",
     "footer_credito": "HORIZONTE TEMPORAL · 2026",
-    "noticias_volver": "← VOLVER A NOTICIAS"
+    "noticias_volver": "← VOLVER A NOTICIAS",
+    "capitulo_etiqueta": "CAPÍTULO",
+    "cine_firma": "HORIZONTE TEMPORAL / ARCHIVO NARRATIVO",
+    "cine_anterior": "ANTERIOR",
+    "cine_siguiente": "SIGUIENTE",
+    "cine_ayuda": "EXPLORA CON LAS FLECHAS O EL TECLADO",
+    "cine_inicio": "INICIO DEL RECORRIDO",
+    "cine_fin": "FIN DEL RECORRIDO",
+    "cine_escenas": "SECUENCIA DE IMÁGENES",
+    "cine_reproducir": "REPRODUCIR",
+    "cine_pausar": "PAUSAR",
+    "noticia_info_relacionada": "Información relacionada",
+    "noticia_no_encontrada": "Noticia no encontrada.",
+    "noticia_error": "No se pudo cargar la noticia."
   },
   "capitulos": [
     {
