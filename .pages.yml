@@ -359,9 +359,16 @@ content:
             label: "Botón para volver al inicio"
             type: string
       - name: pie
-        label: "PIE DE PÁGINA"
+        label: "PIE DE PÁGINA — LOGO DE LA EDITORIAL Y TEXTOS"
         type: object
+        description: "El logo editorial se muestra en el pie de página dentro de un espacio cuadrado, sin recortarlo. Déjalo vacío para ocultarlo."
         fields:
+          - name: logo_editorial
+            label: "LOGO CUADRADO DE LA EDITORIAL — elegir, subir o quitar"
+            type: image
+          - name: nombre_editorial
+            label: "Nombre de la editorial (descripción accesible del logo)"
+            type: string
           - name: footer_marca
             label: "Nombre en pie de página"
             type: string
