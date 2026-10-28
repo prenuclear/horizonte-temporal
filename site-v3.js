@@ -158,7 +158,7 @@ function nav(){
 }
 function organizeContent(raw){
  const data={...raw,textos:{...(raw.textos||{})}};
- const copyKeys=new Set([...$('[data-copy]').map(x=>x.dataset.copy),
+ const copyKeys=new Set([...Array.from(document.querySelectorAll('[data-copy]'), x=>x.dataset.copy),
   'descripcion_seo','noticia_leer','noticias_vacio','noticias_volver',
   'noticia_info_relacionada','noticia_no_encontrada','capitulo_etiqueta']);
  for(const group of ['encabezado','portada','historia','galeria_seccion','proceso','novedades_seccion','compra','contacto','cierre','pie']){
