@@ -40,3 +40,7 @@ Las imágenes existentes se conservan en la carpeta `images`. Eliminar una image
 Guardar los cambios en Pages CMS crea una modificación en GitHub. Si Netlify está conectado a la rama `main`, publicará la actualización automáticamente. Tras el despliegue, usar Ctrl+F5 para comprobar los cambios.
 
 Fecha de reorganización: 28 de octubre de 2026.
+
+## Nota de estructura (28 de octubre de 2026)
+
+Se retiró la sección duplicada «02 / ESTRUCTURA NARRATIVA» y su acceso del menú. Los siete capítulos y sus galerías de tres imágenes siguen funcionando dentro de «04 / ARCHIVO VISUAL»; todos son editables desde Pages CMS. Las escenas del explorador cinematográfico anterior permanecen preservadas dentro de `contenido.json`, pero no se muestran en la web ni como campos de edición porque esa sección se retiró. Los números de las demás secciones se conservan por ahora.
