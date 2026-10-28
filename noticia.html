@@ -22,7 +22,7 @@
     const response=await fetch('contenido.json',{cache:'no-store'});
     if(!response.ok)throw Error('Contenido no disponible');
     const data=await response.json();
-    const copy=data.textos||{};
+    const copy={...(data.textos||{}),...(data.encabezado||{}),...(data.novedades_seccion||{})};
     for(const [selector,key] of [['#newsBrand','marca_cabecera'],['#newsBack','noticias_volver']]){
       const node=document.querySelector(selector);
       if(Object.prototype.hasOwnProperty.call(copy,key)){node.textContent=copy[key]||'';node.hidden=!copy[key];}
