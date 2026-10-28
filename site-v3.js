@@ -31,16 +31,6 @@ function copy(data){
  $$('[data-content]').forEach(n=>{const key=n.dataset.content;if(Object.prototype.hasOwnProperty.call(data,key))text(n,data[key]);});
  const meta=$('meta[name="description"]');if(meta&&strings.descripcion_seo!==undefined)meta.content=strings.descripcion_seo||'';
 }
-function chapters(data){
- const root=$('#chapterGrid');if(!root)return;root.replaceChildren();
- (Array.isArray(data.capitulos)?data.capitulos:[]).slice(0,7).forEach((c,i)=>{
-  const card=el('article','chapter'),src=imagePath(c.imagen);
-  if(src){const im=el('img');im.src=src;im.loading='lazy';im.alt=c.titulo||'Ilustración del capítulo';card.append(im);}
-  const info=el('div','chapter-content');
-  info.append(el('span','chapter-number',((data.textos||{}).capitulo_etiqueta??'CAPÍTULO')+' '+String(i+1).padStart(2,'0')+' / 07'));
-  child(info,'h3','',c.titulo);child(info,'p','',c.texto);card.append(info);root.append(card);
- });
-}
 function gallery(data){
  const root=$('#galleryGrid'),nav=$('#galleryChapterNav'),dialog=$('#lightbox');
  if(!root||!nav||!dialog)return;
@@ -173,7 +163,7 @@ function nav(){
 async function init(){
  nav();
  try{const r=await fetch('contenido.json',{cache:'no-store'});if(!r.ok)throw Error('Contenido no disponible');const data=await r.json();
-  copy(data);chapters(data);gallery(data);atlas(data);news(data);buy(data);media(data);contact(data);
+  copy(data);gallery(data);atlas(data);news(data);buy(data);media(data);contact(data);
  }catch(error){console.warn('Error cargando contenido.json en Horizonte Temporal',error);}
 }
 init();
