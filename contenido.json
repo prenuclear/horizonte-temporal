@@ -13,8 +13,8 @@
     }
   ],
   "presentacion": "Horizonte Temporal es una novela gráfica de ciencia ficción que explora distintos mundos y tiempos a través de sus personajes, criaturas y escenarios. En este sitio podrás conocer la historia, descubrir sus ilustraciones y seguir los avances del proyecto.",
-  "historia_1": "Horizonte Temporal es una novela gráfica de ciencia ficción que explora el origen de la humanidad, la extinción de la vida en el cosmos y el surgimiento de nuevas formas de existencia. A través de distintas versiones de un personaje llamado el Príncipe, la historia reconstruye las transformaciones de la Tierra, un planeta donde la caída de una misteriosa ceniza proveniente de civilizaciones extinguidas altera la evolución de las especies. Esta materia, que conserva rastros de innumerables formas de vida, introduce nuevas posibilidades biológicas y desencadena acontecimientos que desafían las leyes del tiempo y la conciencia. Entre viajes espaciales, criaturas desconocidas y mundos que comienzan a superponerse, la humanidad descubre que quizás no representa el comienzo de la vida, sino su último intento por sobrevivir a la extinción del universo.",
-  "imagen_historia": "/images/1000057955.jpg",
+  "historia_1": "A través de distintas versiones de un personaje llamado el Príncipe, la historia reconstruye las transformaciones de la Tierra: un planeta donde la caída de una misteriosa ceniza, proveniente de civilizaciones extinguidas, altera el curso de la evolución de las especies.\n\nEsta materia, que conserva los rastros de innumerables formas de vida, abre nuevas posibilidades biológicas y desencadena acontecimientos que desafían las leyes del tiempo y de la conciencia. Entre viajes espaciales, criaturas desconocidas y mundos que comienzan a superponerse, la humanidad descubre que quizá no sea el origen de la vida, sino su último intento por sobrevivir a la extinción del universo.",
+  "imagen_historia": "/images/22.jpg",
   "imagen_cita": "/images/1000057950.jpg",
   "imagen_cierre": "/images/1000057945.jpg",
   "proceso_1": "El universo visual de Horizonte Temporal se ha construido a lo largo de unos quince años, a partir de ilustraciones que originalmente surgieron de manera independiente y que, con el tiempo, comenzaron a formar parte de un mismo proyecto. Su desarrollo combina dibujo, escultura manual, construcción de maquetas, modificación de figuras existentes, modelado e impresión 3D, fotografía y composición digital. \n\nA través de estos procedimientos, las imágenes han sido intervenidas y transformadas, incorporando nuevos elementos y estableciendo relaciones entre trabajos realizados en distintos momentos. Este proceso de experimentación, que transita constantemente entre lo físico y lo digital, ha permitido desarrollar los personajes, escenarios y situaciones que hoy conforman el universo narrativo de la novela gráfica.",
@@ -98,20 +98,7 @@
     "footer_marca": "HORIZONTE TEMPORAL",
     "footer_descripcion": "Una novela gráfica en construcción.",
     "footer_credito": "HORIZONTE TEMPORAL · 2026",
-    "noticias_volver": "← VOLVER A NOTICIAS",
-    "capitulo_etiqueta": "CAPÍTULO",
-    "cine_firma": "HORIZONTE TEMPORAL / ARCHIVO NARRATIVO",
-    "cine_anterior": "ANTERIOR",
-    "cine_siguiente": "SIGUIENTE",
-    "cine_ayuda": "EXPLORA CON LAS FLECHAS O EL TECLADO",
-    "cine_inicio": "INICIO DEL RECORRIDO",
-    "cine_fin": "FIN DEL RECORRIDO",
-    "cine_escenas": "SECUENCIA DE IMÁGENES",
-    "cine_reproducir": "REPRODUCIR",
-    "cine_pausar": "PAUSAR",
-    "noticia_info_relacionada": "Información relacionada",
-    "noticia_no_encontrada": "Noticia no encontrada.",
-    "noticia_error": "No se pudo cargar la noticia."
+    "noticias_volver": "← VOLVER A NOTICIAS"
   },
   "capitulos": [
     {
@@ -282,6 +269,5 @@
     "descripcion": "La edición impresa está en preparación. Aquí anunciaremos el lanzamiento y los lugares donde conseguirla.",
     "estado": "PRÓXIMAMENTE",
     "imagen": "/images/1000057951.jpg"
-  },
-  "logo_cierre": "/images/horizonte temporal-3_.png"
+  }
 }
