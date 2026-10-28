@@ -100,9 +100,6 @@ content:
           - name: nav_historia
             label: "Menú: Historia"
             type: string
-          - name: nav_capitulos
-            label: "Menú: Capítulos"
-            type: string
           - name: nav_universo
             label: "Menú: Universo"
             type: string
@@ -145,18 +142,6 @@ content:
           - name: historia_pie
             label: "Historia: pie de imagen"
             type: string
-          - name: capitulos_indice
-            label: "Capítulos: rótulo"
-            type: string
-          - name: capitulos_subtitulo
-            label: "Capítulos: subtítulo"
-            type: string
-          - name: capitulos_titulo
-            label: "Capítulos: título"
-            type: string
-          - name: capitulos_ayuda
-            label: "Capítulos: texto introductorio"
-            type: text
           - name: cita_rotulo
             label: "Cita: rótulo"
             type: string
@@ -265,33 +250,6 @@ content:
           - name: capitulo_etiqueta
             label: "Etiqueta para capítulos"
             type: string
-          - name: cine_firma
-            label: "Explorador - encabezado"
-            type: string
-          - name: cine_anterior
-            label: "Explorador - botón anterior"
-            type: string
-          - name: cine_siguiente
-            label: "Explorador - botón siguiente"
-            type: string
-          - name: cine_ayuda
-            label: "Explorador - instrucciones"
-            type: string
-          - name: cine_inicio
-            label: "Explorador - inicio"
-            type: string
-          - name: cine_fin
-            label: "Explorador - final"
-            type: string
-          - name: cine_escenas
-            label: "Explorador - secuencia"
-            type: string
-          - name: cine_reproducir
-            label: "Explorador - botón de reproducción"
-            type: string
-          - name: cine_pausar
-            label: "Explorador - botón de pausa"
-            type: string
           - name: noticia_info_relacionada
             label: "Noticia - información relacionada"
             type: string
@@ -315,20 +273,6 @@ content:
           - name: texto
             label: Sinopsis
             type: text
-          - name: epigrafe
-            label: Secuencia cinematográfica - texto de la escena inicial
-            type: text
-          - name: escenas
-            label: Secuencia cinematográfica - escenas adicionales (máximo 7)
-            type: object
-            list: true
-            fields:
-              - name: imagen
-                label: Imagen de la escena (elige una existente o sube una nueva)
-                type: image
-              - name: texto
-                label: Texto breve que aparece en la escena
-                type: text
           - name: galeria
             label: Galería de este capítulo (3 imágenes, puedes quitar cualquiera)
             type: object
