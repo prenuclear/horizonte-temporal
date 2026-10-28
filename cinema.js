@@ -62,17 +62,20 @@
   let imageRequest = 0;
   let playback = null;
   const sceneDuration = 6800;
+  let cmsCopy = {};
 
   function stopPlayback() {
     if (playback !== null) { window.clearInterval(playback); playback = null; }
-    playButton.textContent = '▶ REPRODUCIR';
+    playButton.textContent = '▶ ' + (cmsCopy.cine_reproducir ?? 'REPRODUCIR');
+    playButton.hidden = !(cmsCopy.cine_reproducir ?? 'REPRODUCIR').trim();
     playButton.setAttribute('aria-pressed', 'false');
     playButton.setAttribute('aria-label', 'Reproducir secuencia');
   }
   function togglePlayback() {
     if (playback !== null) { stopPlayback(); return; }
     if (scenes.length < 2) return;
-    playButton.textContent = 'Ⅱ PAUSAR';
+    playButton.textContent = 'Ⅱ ' + (cmsCopy.cine_pausar ?? 'PAUSAR');
+    playButton.hidden = !(cmsCopy.cine_pausar ?? 'PAUSAR').trim();
     playButton.setAttribute('aria-pressed', 'true');
     playButton.setAttribute('aria-label', 'Pausar secuencia');
     playback = window.setInterval(() => showScene((activeScene + 1) % scenes.length), sceneDuration);
@@ -249,7 +252,35 @@
   // Pages CMS guarda las escenas en contenido.json; los otros capítulos permanecen intactos.
   fetch('contenido.json', { cache: 'no-store' })
     .then(response => { if (!response.ok) throw Error('No se pudo leer el contenido'); return response.json(); })
-    .then(data => { cmsChapters = Array.isArray(data.capitulos) ? data.capitulos : []; if (entries.length) setupScenes(active); })
+    .then(data => {
+      cmsChapters = Array.isArray(data.capitulos) ? data.capitulos : [];
+      const t = data.textos || {};
+      cmsCopy = t;
+      for (const [selector,key] of [
+        ['.cinema-signature','cine_firma'],['.cinema-prev','cine_anterior'],['.cinema-next','cine_siguiente'],
+        ['.cinema-hint','cine_ayuda'],['.cinema-progress-label span:first-child','cine_inicio'],
+        ['.cinema-progress-label span:last-child','cine_fin'],['.cinema-sequence-label','cine_escenas']
+      ]) {
+        const target=explorer.querySelector(selector);
+        if(target && Object.prototype.hasOwnProperty.call(t,key)){
+          const value=String(t[key]||'');
+          if(selector==='.cinema-prev')target.innerHTML='<span aria-hidden="true">←</span> ';
+          else if(selector==='.cinema-next')target.innerHTML='';
+          else if(selector==='.cinema-sequence-label'){
+            const counter=target.querySelector('.cinema-sequence-counter');
+            target.textContent=value;
+            if(counter)target.append(counter);
+            target.hidden=!value.trim();
+            continue;
+          }else target.textContent='';
+          target.append(document.createTextNode(value));
+          if(selector==='.cinema-next')target.append(document.createTextNode(' →'));
+          target.hidden=!value.trim();
+        }
+      }
+      if(entries.length)setupScenes(active);
+      stopPlayback();
+    })
     .catch(() => { /* La navegación básica sigue funcionando sin este archivo. */ });
 
   previous.addEventListener('click', () => activate(active - 1, { url: true, animate: true }));
