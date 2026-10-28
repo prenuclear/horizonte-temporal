@@ -8,6 +8,26 @@ content:
     path: contenido.json
     format: json
     fields:
+      - name: cita_destacada
+        label: "CITA DESTACADA — imagen de fondo y textos"
+        type: object
+        description: "Edita la imagen que aparece detrás de la cita sobre la materia. Selecciona una imagen existente, sube otra o vacía el campo para quitarla."
+        fields:
+          - name: imagen
+            label: "IMAGEN DE LA CITA — cambiar, subir o quitar"
+            type: image
+            description: "Se encuentra en la franja con la cita «La materia había agotado sus combinaciones». Usa la biblioteca de imágenes o sube una nueva."
+            options:
+              extensions: [jpg, jpeg, png, webp, gif, avif]
+          - name: rotulo
+            label: "Texto superior de la cita"
+            type: string
+          - name: texto
+            label: "Texto principal de la cita"
+            type: text
+          - name: credito
+            label: "Texto inferior de la cita"
+            type: string
       - name: logo_portada
         label: Logo de portada (opcional)
         type: image
@@ -48,9 +68,6 @@ content:
         type: text
       - name: imagen_historia
         label: Historia - imagen principal
-        type: image
-      - name: imagen_cita
-        label: Fragmento - imagen de fondo
         type: image
       - name: imagen_cierre
         label: Cierre - imagen de fondo
@@ -121,15 +138,6 @@ content:
             type: string
           - name: historia_pie
             label: "Historia: pie de imagen"
-            type: string
-          - name: cita_rotulo
-            label: "Cita: rótulo"
-            type: string
-          - name: cita_texto
-            label: "Cita: texto"
-            type: text
-          - name: cita_credito
-            label: "Cita: crédito"
             type: string
           - name: galeria_indice
             label: "Galería: rótulo"
