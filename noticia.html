@@ -1,1 +1,61 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Noticias — Horizonte Temporal</title><link rel="stylesheet" href="styles.css"></head><body><header class="topbar"><a class="wordmark" href="index.html#inicio">HORIZONTE <b>TEMPORAL</b></a><nav><a href="index.html#novedades">← VOLVER A NOTICIAS</a></nav></header><main class="news-article" id="article"><p>Cargando noticia…</p></main><script>const root=document.querySelector('#article');fetch('contenido.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{const id=new URLSearchParams(location.search).get('id');const n=(d.noticias||[]).find(x=>(x.id||x.fecha)===id&&x.publicar!==false);root.replaceChildren();if(!n){root.textContent='Noticia no encontrada.';return;}document.title=(n.titulo||'Noticia')+' — Horizonte Temporal';const add=(tag,txt)=>{const e=document.createElement(tag);e.textContent=txt||'';root.append(e);return e};add('p',n.fecha);add('h1',n.titulo);if(n.imagen){const im=document.createElement('img');im.src='images/'+(n.imagen.startsWith('images/')?n.imagen.slice(7):n.imagen);im.alt=n.titulo||'';root.append(im)}add('p',n.contenido||n.texto);if(n.relacionado){const details=document.createElement('details');const summary=document.createElement('summary');summary.textContent='Información relacionada';const p=document.createElement('p');p.textContent=n.relacionado;details.append(summary,p);root.append(details)}if(n.enlace&&(n.enlace.startsWith('https://')||n.enlace.startsWith('http://'))){const a=document.createElement('a');a.href=n.enlace;a.textContent=n.texto_enlace||'Enlace relacionado';a.target='_blank';a.rel='noopener noreferrer';root.append(a)}}).catch(()=>root.textContent='No se pudo cargar la noticia.');</script></body></html>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090a0d">
+  <title>Noticias — Horizonte Temporal</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="gallery-v3.css">
+  <style>.news-back{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#e8e6df}.news-back:hover{color:var(--accent)}.news-article{white-space:pre-line}.news-article img{margin:20px 0 35px}@media(max-width:600px){.topbar{padding:0 5%}.news-back{font-size:10px}}</style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="wordmark" id="newsBrand" href="index.html#inicio">HORIZONTE TEMPORAL</a>
+    <a class="news-back" id="newsBack" href="index.html#novedades">← VOLVER A NOTICIAS</a>
+  </header>
+  <main class="news-article" id="article"><p>Cargando noticia…</p></main>
+<script>
+(async()=>{
+  const root=document.querySelector('#article');
+  try{
+    const response=await fetch('contenido.json',{cache:'no-store'});
+    if(!response.ok)throw Error('Contenido no disponible');
+    const data=await response.json();
+    const copy=data.textos||{};
+    for(const [selector,key] of [['#newsBrand','marca_cabecera'],['#newsBack','noticias_volver']]){
+      const node=document.querySelector(selector);
+      if(Object.prototype.hasOwnProperty.call(copy,key)){node.textContent=copy[key]||'';node.hidden=!copy[key];}
+    }
+    const id=new URLSearchParams(location.search).get('id');
+    const n=(data.noticias||[]).find(item=>(item.id||item.fecha)===id&&item.publicar!==false);
+    root.replaceChildren();
+    if(!n){root.textContent='Noticia no encontrada.';return;}
+    document.title=(n.titulo||'Noticia')+' — Horizonte Temporal';
+    function add(tag,value,cls=''){
+      if(value===undefined||value===null||!String(value).trim())return null;
+      const node=document.createElement(tag);node.textContent=String(value);
+      if(cls)node.className=cls;root.append(node);return node;
+    }
+    add('p',n.fecha,'kicker');
+    add('h1',n.titulo);
+    if(typeof n.imagen==='string'&&n.imagen.trim()){
+      const raw=n.imagen.trim().replace(/^\/?images\//,'');
+      if(/^[^\/\\]+\.(?:jpe?g|png|webp|gif|avif)$/i.test(raw)&&!raw.includes('..')){
+        const img=document.createElement('img');img.src='images/'+encodeURIComponent(raw);img.alt=n.titulo||'Imagen de la noticia';img.loading='lazy';root.append(img);
+      }
+    }
+    add('p',n.contenido||n.texto);
+    if(n.relacionado){
+      const details=document.createElement('details');
+      const summary=document.createElement('summary');summary.textContent='Información relacionada';
+      const p=document.createElement('p');p.textContent=n.relacionado;details.append(summary,p);root.append(details);
+    }
+    if(/^https:\/\//i.test(n.enlace||'')){
+      const a=document.createElement('a');a.href=n.enlace;a.target='_blank';a.rel='noopener noreferrer';a.textContent=n.texto_enlace||'Enlace relacionado';root.append(a);
+    }
+  }catch(error){console.warn(error);root.textContent='No se pudo cargar la noticia.';}
+})();
+</script>
+</body>
+</html>
