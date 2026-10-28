@@ -118,6 +118,16 @@ function media(data){
  image($('#heroImage'),data.imagen_portada);image($('#historiaImagen'),data.imagen_historia);
  image($('#quoteImage'),data.cita_destacada && Object.prototype.hasOwnProperty.call(data.cita_destacada,'imagen') ? data.cita_destacada.imagen : data.imagen_cita);
  image($('#closingImage'),data.imagen_cierre);
+ const editorialMark=$('#footerEditorialMark'),editorialLogo=$('#footerEditorialLogo');
+ const editorialSrc=imagePath(data.logo_editorial);
+ if(editorialMark&&editorialLogo){
+  editorialMark.hidden=!editorialSrc;
+  if(editorialSrc){
+   editorialLogo.alt=String(data.nombre_editorial||'Logo de la editorial').trim()||'Logo de la editorial';
+   editorialLogo.onerror=()=>{editorialMark.hidden=true;};
+   editorialLogo.src=editorialSrc;
+  }else editorialLogo.removeAttribute('src');
+ }
  const logo=$('#heroLogo'),closing=$('#closingLogo'),heroTitle=$('#heroTitle'),closingTitle=$('#closingTitle'),logoSrc=imagePath(data.logo_portada),closingSrc=imagePath(data.logo_cierre);
  if(logoSrc){logo.src=logoSrc;logo.hidden=false;logo.style.display='block';heroTitle.hidden=true;heroTitle.style.display='none';}
  else {logo.hidden=true;logo.style.display='none';heroTitle.hidden=!(data.textos?.hero_titulo||'').trim();heroTitle.style.display=heroTitle.hidden?'none':'block';}
