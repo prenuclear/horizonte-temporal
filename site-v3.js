@@ -37,7 +37,7 @@ function chapters(data){
   const card=el('article','chapter'),src=imagePath(c.imagen);
   if(src){const im=el('img');im.src=src;im.loading='lazy';im.alt=c.titulo||'Ilustración del capítulo';card.append(im);}
   const info=el('div','chapter-content');
-  info.append(el('span','chapter-number','CAPÍTULO '+String(i+1).padStart(2,'0')+' / 07'));
+  info.append(el('span','chapter-number',((data.textos||{}).capitulo_etiqueta??'CAPÍTULO')+' '+String(i+1).padStart(2,'0')+' / 07'));
   child(info,'h3','',c.titulo);child(info,'p','',c.texto);card.append(info);root.append(card);
  });
 }
@@ -51,7 +51,7 @@ function gallery(data){
   const anchor='galeria-capitulo-'+(i+1),section=el('section','editorial-chapter');
   section.id=anchor;
   const heading=el('div','editorial-heading');
-  heading.append(el('span','editorial-chapter-number','CAPÍTULO '+String(i+1).padStart(2,'0')));
+  heading.append(el('span','editorial-chapter-number',((data.textos||{}).capitulo_etiqueta??'CAPÍTULO')+' '+String(i+1).padStart(2,'0')));
   child(heading,'h3','editorial-chapter-title',chapter.titulo);section.append(heading);
   const tiles=el('div','editorial-tiles');
   items.forEach((item,j)=>{
@@ -103,7 +103,8 @@ function news(data){
   if(src){const im=el('img');im.src=src;im.loading='lazy';im.alt=n.titulo||'Noticia';card.append(im);}
   const box=el('div','news-body');
   child(box,'span','kicker',n.fecha);child(box,'h3','',n.titulo);child(box,'p','',n.texto);
-  if(n.id||n.fecha){const a=el('a','',((data.textos||{}).noticia_leer||'LEER NOTICIA COMPLETA')+' ↗');a.href='noticia.html?id='+encodeURIComponent(n.id||n.fecha);box.append(a);}
+  const readLabel=(data.textos||{}).noticia_leer;
+  if((n.id||n.fecha)&&readLabel){const a=el('a','',readLabel+' ↗');a.href='noticia.html?id='+encodeURIComponent(n.id||n.fecha);box.append(a);}
   if(typeof n.enlace==='string'&&/^https:\/\//i.test(n.enlace)){const a=el('a','',n.texto_enlace||'VER MÁS');a.href=n.enlace;a.target='_blank';a.rel='noopener noreferrer';box.append(a);}
   card.append(box);root.append(card);
  });
