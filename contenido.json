@@ -20,32 +20,11 @@
   "proceso_1": "El universo visual de Horizonte Temporal se ha construido a lo largo de unos quince años, a partir de ilustraciones que originalmente surgieron de manera independiente y que, con el tiempo, comenzaron a formar parte de un mismo proyecto. Su desarrollo combina dibujo, escultura manual, construcción de maquetas, modificación de figuras existentes, modelado e impresión 3D, fotografía y composición digital. \n\nA través de estos procedimientos, las imágenes han sido intervenidas y transformadas, incorporando nuevos elementos y estableciendo relaciones entre trabajos realizados en distintos momentos. Este proceso de experimentación, que transita constantemente entre lo físico y lo digital, ha permitido desarrollar los personajes, escenarios y situaciones que hoy conforman el universo narrativo de la novela gráfica.",
   "video_proceso": "https://youtube.com/shorts/tzL-7vUZB8c",
   "video_poster_proceso": "/images/1000057954.jpg",
-  "atlas": [
-    {
-      "imagen": "/images/1000057944.jpg",
-      "etiqueta": "01 / SÍMBOLOS",
-      "titulo": "El becerro",
-      "texto": "Una figura que reaparece entre los restos de mundos imposibles."
-    },
-    {
-      "imagen": "/images/1000057946.jpg",
-      "etiqueta": "02 / CRIATURAS",
-      "titulo": "Los otros habitantes",
-      "texto": "Presencias surgidas donde las antiguas leyes ya no bastan."
-    },
-    {
-      "imagen": "/images/1000057953.jpg",
-      "etiqueta": "03 / TERRITORIOS",
-      "titulo": "La Tierra alterada",
-      "texto": "La vida cotidiana persiste ante señales que llegan del cosmos."
-    }
-  ],
   "textos": {
     "descripcion_seo": "Horizonte Temporal: novela gráfica de ciencia ficción, ruinas y transformación.",
     "marca_cabecera": "HORIZONTE TEMPORAL",
     "menu": "MENÚ ☰",
     "nav_historia": "La historia",
-    "nav_universo": "Universo",
     "nav_galeria": "Galería",
     "nav_proceso": "Proceso",
     "nav_novedades": "Novedades",
@@ -62,9 +41,6 @@
     "cita_rotulo": "FRAGMENTO / ARCHIVO DEL COSMOS",
     "cita_texto": "«La materia había agotado sus combinaciones. Lo que llegó después no era muerte: era otra manera de existir».",
     "cita_credito": "FRAGMENTO NARRATIVO PROVISIONAL",
-    "atlas_indice": "03 / ATLAS DEL UNIVERSO",
-    "atlas_subtitulo": "PERSONAJES · TERRITORIOS · SÍMBOLOS",
-    "atlas_titulo": "Un universo de [ruinas]\ny revelaciones.",
     "galeria_indice": "04 / ARCHIVO VISUAL",
     "galeria_subtitulo": "7 CAPÍTULOS · 21 ESPACIOS VISUALES",
     "galeria_titulo": "Fragmentos de [otros mundos.]",
