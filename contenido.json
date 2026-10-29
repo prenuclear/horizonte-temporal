@@ -1,6 +1,6 @@
 {
   "encabezado": {
-    "descripcion_seo": "Horizonte Temporal: novela gráfica de ciencia ficción, ruinas y transformación.",
+    "descripcion_seo": "Horizonte Temporal: novela gráfica de ciencia ficción, ruinas y transformación. autor Alonso Duarte, año de publicación 2027",
     "marca_cabecera": "HORIZONTE TEMPORAL",
     "menu": "MENÚ ☰",
     "nav_historia": "La historia",
@@ -14,10 +14,9 @@
     "logo_portada": "/images/horizonte temporal-3_.png",
     "imagen_portada": "/images/casa1.jpg",
     "video_portada": "https://www.youtube.com/watch?v=nTtJQ5hLjwA",
-    "video_poster": "/images/casa1.jpg",
     "hero_titulo": "HORIZONTE TEMPORAL",
     "presentacion": "Horizonte Temporal es una novela gráfica de ciencia ficción que explora distintos mundos y tiempos a través de sus personajes, criaturas y escenarios. En este sitio podrás conocer la historia, descubrir sus ilustraciones y seguir los avances del proyecto.",
-    "hero_pie_izq": "7 CAPÍTULOS / 21 IMÁGENES",
+    "hero_pie_izq": "7 CAPÍTULOS ",
     "hero_pie_der": "DESLIZA PARA DESCUBRIR ↓"
   },
   "historia": {
@@ -30,16 +29,16 @@
     "historia_pie": "EL MUNDO DESPUÉS DEL MUNDO"
   },
   "cita_destacada": {
-    "imagen": "/images/1000057950.jpg",
+    "imagen": "/images/333333333.jpg",
     "rotulo": "FRAGMENTO / ARCHIVO DEL COSMOS",
     "texto": "«La materia había agotado sus combinaciones. Lo que llegó después no era muerte: era otra manera de existir».",
-    "credito": "FRAGMENTO NARRATIVO PROVISIONAL"
+    "credito": "FRAGMENTO "
   },
   "galeria_seccion": {
     "galeria_indice": "04 / ARCHIVO VISUAL",
-    "galeria_subtitulo": "7 CAPÍTULOS · 21 ESPACIOS VISUALES",
-    "galeria_titulo": "Fragmentos de [otros mundos.]",
-    "galeria_ayuda": "Selecciona una imagen para verla ampliada. Cada capítulo reúne tres fragmentos visuales.",
+    "galeria_subtitulo": "7 CAPÍTULOS · ",
+    "galeria_titulo": "Fragmentos de [Horizonte]",
+    "galeria_ayuda": "Selecciona una imagen para ampliarla y conocer una muestra de cada uno de los siete capítulos del cómic.",
     "capitulo_etiqueta": "CAPÍTULO"
   },
   "capitulos": [
@@ -95,7 +94,7 @@
       ]
     },
     {
-      "titulo": "MOMENTO CONTEMPORÁNEO Registro de Deriva Humana",
+      "titulo": "MOMENTO CONTEMPORÁNEO - Registro de Deriva Humana",
       "galeria": [
         {
           "imagen": "/images/1000057954.jpg",
@@ -112,7 +111,7 @@
       ]
     },
     {
-      "titulo": "APOCALIPSIS TERRESTRE Registro del Colapso ",
+      "titulo": "APOCALIPSIS TERRESTRE - Registro del Colapso ",
       "galeria": [
         {
           "imagen": "/images/1000057944.jpg",
@@ -129,7 +128,7 @@
       ]
     },
     {
-      "titulo": "UNIÓN DE MUNDO PARALELO  Y EL MUNDO HUMANO Registro de Superposición ",
+      "titulo": "UNIÓN DE MUNDO PARALELO  Y EL MUNDO HUMANO - Registro de Superposición ",
       "galeria": [
         {
           "imagen": "/images/1000057949.jpg",
@@ -146,7 +145,7 @@
       ]
     },
     {
-      "titulo": "CRISIS DEL FUTURO CIBERPUNK El último Estado del  Devenir Humano",
+      "titulo": "CRISIS DEL FUTURO CIBERPUNK - El último Estado del  Devenir Humano",
       "galeria": [
         {
           "imagen": "/images/1000057952.jpg",
@@ -167,7 +166,7 @@
     "proceso_indice": "05 / DETRÁS DE LAS IMÁGENES",
     "proceso_subtitulo": "PROCESO CREATIVO",
     "proceso_entrada": "UNA OBRA EN TRANSFORMACIÓN",
-    "proceso_titulo": "Entre la maqueta,\nel dibujo y la [memoria.]",
+    "proceso_titulo": "Entre la maqueta,el dibujo y la [secuencia.]",
     "proceso_1": "El universo visual de Horizonte Temporal se ha construido a lo largo de unos quince años, a partir de ilustraciones que originalmente surgieron de manera independiente y que, con el tiempo, comenzaron a formar parte de un mismo proyecto. Su desarrollo combina dibujo, escultura manual, construcción de maquetas, modificación de figuras existentes, modelado e impresión 3D, fotografía y composición digital. \n\nA través de estos procedimientos, las imágenes han sido intervenidas y transformadas, incorporando nuevos elementos y estableciendo relaciones entre trabajos realizados en distintos momentos. Este proceso de experimentación, que transita constantemente entre lo físico y lo digital, ha permitido desarrollar los personajes, escenarios y situaciones que hoy conforman el universo narrativo de la novela gráfica.",
     "video_proceso": "https://youtube.com/shorts/tzL-7vUZB8c",
     "video_poster_proceso": "/images/1000057954.jpg",
@@ -207,7 +206,7 @@
     "compra_subtitulo": "CONSIGUE EL CÓMIC",
     "compra_entrada": "EDICIÓN IMPRESA",
     "titulo": "Horizonte Temporal",
-    "descripcion": "La edición impresa está en preparación. Aquí anunciaremos el lanzamiento y los lugares donde conseguirla.",
+    "descripcion": "La edición impresa se encuentra en preparación. Pronto anunciaremos aquí su lanzamiento, así como las vías de distribución y los lugares donde podrá adquirirse.",
     "estado": "PRÓXIMAMENTE",
     "imagen": "/images/1000057951.jpg"
   },
