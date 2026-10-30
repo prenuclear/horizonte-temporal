@@ -50,3 +50,9 @@ Guardar en Pages CMS actualiza el repositorio GitHub. Netlify publicará los cam
 ## Logo de la editorial en el pie de página
 
 En **«PIE DE PÁGINA — LOGO DE LA EDITORIAL Y TEXTOS»** usa el campo **«LOGO CUADRADO DE LA EDITORIAL — elegir, subir o quitar»** para subir un PNG, JPG o WebP, o seleccionar una imagen existente. Se recomienda un archivo cuadrado (por ejemplo 500 × 500 píxeles) y PNG transparente si el logo lo requiere. La web muestra el logo dentro de un cuadrado sin cortarlo. Si no seleccionas ningún archivo, no aparece el espacio reservado. Puedes introducir el nombre de la editorial para describir el logotipo de forma accesible.
+
+## Favicon (ícono de la pestaña del navegador)
+
+En Pages CMS entra a **«ENCABEZADO Y NAVEGACIÓN» → «FAVICON — ícono de la pestaña del navegador (PNG cuadrado)»**. Puedes elegir una imagen de la carpeta `images` o subir un PNG cuadrado de **512 × 512 píxeles**, preferiblemente con fondo transparente. También funcionan imágenes pequeñas de 32 × 32 píxeles, pero para conservar nitidez es preferible subir una versión mayor. El navegador reducirá el favicon a su tamaño habitual (16 × 16 o 32 × 32 píxeles).
+
+El favicon inicial usa el logo existente del proyecto. Puedes reemplazarlo o dejarlo vacío para ocultar el enlace al ícono. Se muestra tanto en la página principal como en las páginas individuales de noticias. Tras publicar, recarga el sitio con Ctrl + F5; algunos navegadores conservan el favicon en caché.
