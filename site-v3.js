@@ -115,6 +115,8 @@ function mp4(url){
  try{const u=new URL(url,location.href);return (u.protocol==='https:'||u.origin===location.origin)&&/\.(?:mp4|webm)$/i.test(u.pathname);}catch(_){return false;}
 }
 function media(data){
+ const siteFavicon=$('#siteFavicon');
+ if(siteFavicon){const iconSrc=imagePath(data.favicon_sitio);if(iconSrc)siteFavicon.href=iconSrc;else siteFavicon.remove();}
  image($('#heroImage'),data.imagen_portada);image($('#historiaImagen'),data.imagen_historia);
  image($('#quoteImage'),data.cita_destacada && Object.prototype.hasOwnProperty.call(data.cita_destacada,'imagen') ? data.cita_destacada.imagen : data.imagen_cita);
  image($('#closingImage'),data.imagen_cierre);
