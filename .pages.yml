@@ -13,6 +13,10 @@ content:
         type: object
         description: "Barra superior, enlaces del menú y descripción del sitio."
         fields:
+          - name: favicon_sitio
+            label: "FAVICON — ícono de la pestaña del navegador (PNG cuadrado)"
+            type: image
+            description: "Elige una imagen existente o sube un PNG cuadrado, idealmente de 512 x 512 píxeles. Déjalo vacío para quitar el favicon."
           - name: descripcion_seo
             label: "Descripción de la web para buscadores"
             type: text
