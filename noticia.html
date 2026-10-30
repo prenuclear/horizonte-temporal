@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#090a0d">
   <title>Noticias — Horizonte Temporal</title>
+  <link rel="icon" id="siteFavicon" href="images/horizonte%20temporal-3_.png"/>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="gallery-v3.css">
   <style>.news-back{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#e8e6df}.news-back:hover{color:var(--accent)}.news-article{white-space:pre-line}.news-article img{margin:20px 0 35px}@media(max-width:600px){.topbar{padding:0 5%}.news-back{font-size:10px}}</style>
@@ -22,6 +23,17 @@
     const response=await fetch('contenido.json',{cache:'no-store'});
     if(!response.ok)throw Error('Contenido no disponible');
     const data=await response.json();
+    const favicon=document.querySelector('#siteFavicon');
+    if(favicon){
+      const configured=data.encabezado?.favicon_sitio||'';
+      const file=typeof configured==='string'?configured.trim().replace(/^\/?images\//,''):'';
+      if(file && !file.includes('..') && !/[\/\\]/.test(file) && /\.(png|jpe?g|webp|gif|svg|avif)$/i.test(file)){
+        favicon.href='images/'+encodeURIComponent(file);
+      }else{
+        favicon.remove();
+      }
+    }
+
     const copy={...(data.textos||{}),...(data.encabezado||{}),...(data.novedades_seccion||{})};
     for(const [selector,key] of [['#newsBrand','marca_cabecera'],['#newsBack','noticias_volver']]){
       const node=document.querySelector(selector);
