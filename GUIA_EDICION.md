@@ -56,3 +56,19 @@ En **«PIE DE PÁGINA — LOGO DE LA EDITORIAL Y TEXTOS»** usa el campo **«LOG
 En Pages CMS entra a **«ENCABEZADO Y NAVEGACIÓN» → «FAVICON — ícono de la pestaña del navegador (PNG cuadrado)»**. Puedes elegir una imagen de la carpeta `images` o subir un PNG cuadrado de **512 × 512 píxeles**, preferiblemente con fondo transparente. También funcionan imágenes pequeñas de 32 × 32 píxeles, pero para conservar nitidez es preferible subir una versión mayor. El navegador reducirá el favicon a su tamaño habitual (16 × 16 o 32 × 32 píxeles).
 
 El favicon inicial usa el logo existente del proyecto. Puedes reemplazarlo o dejarlo vacío para ocultar el enlace al ícono. Se muestra tanto en la página principal como en las páginas individuales de noticias. Tras publicar, recarga el sitio con Ctrl + F5; algunos navegadores conservan el favicon en caché.
+
+## Venta directa con Mercado Pago (preparada, todavía desactivada)
+
+La sección **«07 / EDICIÓN IMPRESA Y DÓNDE COMPRAR»** permite vender la revista directamente mediante **Link de pago** de Mercado Pago. El cobro se completa en un sitio seguro de Mercado Pago, no en la web de Horizonte Temporal. No necesitas pegar claves de cuenta ni configurar tarjetas en GitHub.
+
+**Para activar el botón de compra:**
+
+1. En tu cuenta de Mercado Pago, abre **Herramientas para vender / Link de pago**, crea un producto llamado, por ejemplo, `Horizonte Temporal — Número 1 de 4`, e indica el precio final que cobrarás. Comparte o copia el **enlace de pago HTTPS** que genere Mercado Pago (habitualmente `mpago.la/...` o `link.mercadopago.cl/...`).
+2. En Pages CMS, abre **«07 / EDICIÓN IMPRESA Y DÓNDE COMPRAR»**. Completa el precio visible y asegúrate de que sea idéntico al configurado en Mercado Pago.
+3. Rellena **«CONDICIONES DE ENTREGA — retiro y despachos»** explicando cobertura, costo de envío y cómo obtendrás la dirección de entrega del comprador.
+4. Pega el enlace en **«ENLACE DE PAGO DE MERCADO PAGO — pegar aquí»** y, **solo cuando tengas ejemplares disponibles y el procedimiento de entrega resuelto**, activa **«ACTIVAR VENTA DIRECTA CON MERCADO PAGO»**.
+5. Guarda los cambios. Una vez publicados por Netlify, aparecerá el botón **«COMPRAR CON MERCADO PAGO ↗»** en `https://horizonte-temporal.cl/#comprar`.
+
+**Condiciones de seguridad:** inicialmente `venta_activa` es `false` y el enlace está vacío; no se aceptan pagos por la página. El botón solo se activa si el interruptor está encendido y el enlace es HTTPS de un dominio autorizado de Mercado Pago. Para retirar la venta temporalmente, apaga el interruptor sin borrar el enlace.
+
+**Importante:** este enlace de pago **no constituye una tienda con carrito ni un sistema de despacho automático**. Verifica las compras acreditadas en tu cuenta de Mercado Pago y coordina los envíos o retiros por separado. Comprueba con tu configuración del enlace si Mercado Pago recoge una dirección; no presupongas que la obtendrás. No compartas contraseñas, tokens ni claves privadas. Si quieres un sistema de pedidos, stock y envíos automatizados, habría que desarrollar un flujo adicional.
