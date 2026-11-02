@@ -209,6 +209,10 @@
     "titulo": "Horizonte Temporal",
     "descripcion": "La edición impresa se encuentra en preparación. Pronto anunciaremos aquí su lanzamiento, así como las vías de distribución y los lugares donde podrá adquirirse.",
     "estado": "PRÓXIMAMENTE",
+    "informacion_entrega": "Las condiciones de retiro y despacho se anunciarán junto con el inicio de las ventas.",
+    "venta_activa": false,
+    "enlace_mercadopago": "",
+    "texto_boton_pago": "COMPRAR CON MERCADO PAGO ↗",
     "imagen": "/images/1000057951.jpg"
   },
   "contacto": {
