@@ -95,9 +95,34 @@ function news(data){
  });
  if(!root.children.length)child(root,'p','section-sub',(data.textos||{}).noticias_vacio);
 }
+// Enlace de pago alojado por Mercado Pago: nunca recibe tarjetas ni claves en este sitio.
+function mercadoPagoLink(value){
+ if(typeof value!=='string'||!value.trim())return '';
+ try{
+  const u=new URL(value.trim());
+  const host=u.hostname.toLowerCase();
+  if(u.protocol!=='https:'||u.username||u.password||u.pathname==='/')return '';
+  if(host==='mpago.la'||host==='mercadopago.cl'||host.endsWith('.mercadopago.cl')||
+     host==='mercadopago.com'||host.endsWith('.mercadopago.com'))return u.href;
+ }catch(_){}
+ return '';
+}
 function buy(data){
  const b=data.compra||{};image($('#buyImage'),b.imagen);
- ['Title','Description','Price','Status'].forEach((part,i)=>text($('#buy'+part),[b.titulo,b.descripcion,b.precio,b.estado][i]||''));
+ ['Title','Description','Price'].forEach((part,i)=>text($('#buy'+part),[b.titulo,b.descripcion,b.precio][i]||''));
+ const checkout=$('#buyCheckout'),paymentLink=$('#buyPaymentLink');
+ const url=mercadoPagoLink(b.enlace_mercadopago);
+ const enabled=b.venta_activa===true&&Boolean(url);
+ if(checkout&&paymentLink){
+  checkout.hidden=!enabled;
+  if(enabled){
+   paymentLink.href=url;
+   paymentLink.textContent=b.texto_boton_pago||'COMPRAR CON MERCADO PAGO ↗';
+  }else paymentLink.removeAttribute('href');
+ }
+ text($('#buyShipping'),b.informacion_entrega||'');
+ const status=String(b.estado||'PRÓXIMAMENTE').trim();
+ text($('#buyStatus'),enabled&&status.toUpperCase()==='PRÓXIMAMENTE'?'DISPONIBLE PARA COMPRA':status);
  const root=$('#buyLinks');if(!root)return;root.replaceChildren();
  (Array.isArray(b.enlaces)?b.enlaces:[]).forEach(l=>{
   if(!l||!/^https:\/\//i.test(l.url||''))return;
