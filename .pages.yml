@@ -287,6 +287,22 @@ content:
           - name: estado
             label: "Estado de la publicación"
             type: string
+          - name: informacion_entrega
+            label: "CONDICIONES DE ENTREGA — retiro y despachos"
+            type: text
+            description: "Explica el costo del despacho, la cobertura y cómo se coordina la entrega. No actives pagos sin tener esta información resuelta."
+          - name: venta_activa
+            label: "ACTIVAR VENTA DIRECTA CON MERCADO PAGO"
+            type: boolean
+            default: false
+            description: "Inicialmente desactivado. Activa solo cuando tengas precio, ejemplares disponibles, condiciones de entrega y enlace de pago real. El botón aparece únicamente con un enlace válido."
+          - name: enlace_mercadopago
+            label: "ENLACE DE PAGO DE MERCADO PAGO — pegar aquí"
+            type: string
+            description: "Crea el Link de pago en tu cuenta de Mercado Pago y pega el enlace completo HTTPS (por ejemplo, mpago.la o link.mercadopago.cl). No ingreses contraseñas ni claves de API."
+          - name: texto_boton_pago
+            label: "Texto del botón de compra"
+            type: string
           - name: imagen
             label: "Imagen de la edición"
             type: image
